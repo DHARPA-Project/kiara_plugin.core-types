@@ -24,7 +24,6 @@ requirements:
   run:
     - python
     - kiara
-    - kiara_plugin.core
 about:
   home: https://github.com/DHARPA-Project/kiara_plugin.core_types
   license: "Mozilla Public 2.0 (MPL 2.0)"
