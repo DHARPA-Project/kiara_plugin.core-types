@@ -41,7 +41,7 @@ KIARA_METADATA = {
 }
 
 find_modules: KiaraEntryPointItem = (
-    find_kiara_modules_under, "kiara_modules.core_types.core_types"
+    find_kiara_modules_under, "kiara_plugin.core_types.core_types"
 )
 find_value_metadata: KiaraEntryPointItem = (
     find_value_metadata_models_under,
