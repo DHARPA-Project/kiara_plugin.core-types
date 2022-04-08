@@ -31,7 +31,7 @@ KIARA_METADATA = {
         },
         "documentation": {
             "desc": "The url for the module package documentation.",
-            "url": "https://dharpa.org/kiara_plugin.core_types/",
+            "url": "https://DHARPA-Project.github.io/kiara_plugin.core_types/",
         },
     },
     "tags": ["core_types"],

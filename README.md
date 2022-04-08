@@ -9,7 +9,7 @@
 
 A set of modules (and pipelines) for [*Kiara*](https://github.com/DHARPA-project/kiara).
 
- - Documentation: [https://dharpa.org/kiara_plugin.core_types](https://dharpa.org/kiara_plugin.core_types)
+ - Documentation: [https://DHARPA-Project.github.io/kiara_plugin.core_types](https://DHARPA-Project.github.io/kiara_plugin.core_types)
  - Code: [https://github.com/DHARPA-Project/kiara_plugin.core_types](https://github.com/DHARPA-Project/kiara_plugin.core_types)
 
 ## Description
@@ -105,4 +105,3 @@ For details (and other, minor targets), check the ``Makefile``.
 
 This project is MPL v2.0 licensed, for the license text please check the [LICENSE](/LICENSE) file in this repository.
 
-[Copyright (c) 2021 DHARPA project](https://dharpa.org)

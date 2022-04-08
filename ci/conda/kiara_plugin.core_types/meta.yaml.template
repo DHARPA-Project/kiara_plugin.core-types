@@ -30,8 +30,8 @@ about:
   license_family: MOZILLA
   license_file:
   summary: "A set of modules (and pipelines) for kiara."
-  doc_url: https://dharpa.org/kiara_plugin.core_types
-  dev_url:
+  doc_url: https://DHARPA-Project.github.io/kiara_plugin.core_types
+  dev_url: https://github.com/DHARPA-Project/kiara_plugin.core_types
 
 extra:
   recipe-maintainers:

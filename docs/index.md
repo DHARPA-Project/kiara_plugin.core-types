@@ -5,20 +5,21 @@ This package contains a set of commonly used/useful modules, pipelines, types an
 
 ## Description
 
-TODO
+Core data types for kiara.
 
 ## Package content
 
-{% for info_category, details in get_info_for_categories('metadata.value_type','metadata.module', 'metadata.pipeline','metadata.operation_type', limit_to_package='kiara_plugin.core_types').items() %}
-### {{ details['title'] }}
-{% for item, desc in details['items'].items() %}- [{{ item }}][]: {{ desc }} 
-{% endfor %}
-{% endfor %}
+{% for item_type, items in get_package_index().items() %}
 
+### {{ item_type }}
+{% for item, details in items.items() %}
+- [`{{ item }}`][kiara_info.{{ item_type }}.{{ item }}]: {{ details.documentation.description }} 
+{% endfor %}
+{% endfor %}
 
 ## Links
 
- - Documentation: [https://dharpa.org/kiara_plugin.core_types](https://dharpa.org/kiara_plugin.core_types)
+ - Documentation: [https://DHARPA-Project.github.io/kiara_plugin.core_types](https://DHARPA-Project.github.io/kiara_plugin.core_types)
  - Code: [https://github.com/DHARPA-Project/kiara_plugin.core_types](https://github.com/DHARPA-Project/kiara_plugin.core_types)
 
 
