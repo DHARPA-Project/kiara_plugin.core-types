@@ -5,12 +5,13 @@
 [![Coverage Status](https://coveralls.io/repos/github/DHARPA-Project/kiara_plugin.core_types/badge.svg?branch=develop)](https://coveralls.io/github/DHARPA-Project/kiara_plugin.core_types?branch=develop)
 [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-# *kiara* modules (core-types)
+# [**kiara**](https://dharpa.org/kiara.documentation) plugin: (core-types)
 
-A set of modules (and pipelines) for [*Kiara*](https://github.com/DHARPA-project/kiara).
+Core data types for kiara.
 
  - Documentation: [https://DHARPA-Project.github.io/kiara_plugin.core_types](https://DHARPA-Project.github.io/kiara_plugin.core_types)
  - Code: [https://github.com/DHARPA-Project/kiara_plugin.core_types](https://github.com/DHARPA-Project/kiara_plugin.core_types)
+ - `kiara`: [https://dharpa.org/kiara.documentation](https://dharpa.org/kiara.documentation)
 
 ## Description
 
@@ -20,7 +21,7 @@ TODO
 
 ### Requirements
 
-- Python (version >=3.6 -- some make targets only work for Python >=3.7 though)
+- Python (version >= 3.8)
 - pip, virtualenv
 - git
 - make (on Linux / Mac OS X -- optional)
