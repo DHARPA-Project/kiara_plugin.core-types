@@ -9,7 +9,7 @@ from typing import Any, Iterable, Mapping, Type
 
 import orjson
 from kiara.data_types import DataTypeCharacteristics, DataTypeConfig
-from kiara.data_types.included_core_types import SKALAR_CHARACTERISTICS, AnyType
+from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
 from kiara.utils import orjson_dumps
 from kiara.utils.hashing import compute_hash
@@ -28,7 +28,7 @@ class BooleanType(AnyType[bool, DataTypeConfig]):
         return bool
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
-        return SKALAR_CHARACTERISTICS
+        return SCALAR_CHARACTERISTICS
 
     def calculate_size(self, data: bool) -> int:
         return 24
@@ -71,7 +71,7 @@ class IntegerType(AnyType[int, DataTypeConfig]):
         return sys.getsizeof(data)
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
-        return SKALAR_CHARACTERISTICS
+        return SCALAR_CHARACTERISTICS
 
     def parse_python_obj(self, data: Any) -> int:
         return int(data)
@@ -93,7 +93,7 @@ class FloatType(AnyType[float, DataTypeConfig]):
         return sys.getsizeof(data)
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
-        return SKALAR_CHARACTERISTICS
+        return SCALAR_CHARACTERISTICS
 
     def _validate(cls, value: Any) -> Any:
 
@@ -121,7 +121,7 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
         return sys.getsizeof(data)
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
-        return SKALAR_CHARACTERISTICS
+        return SCALAR_CHARACTERISTICS
 
     def parse_python_obj(self, data: Any) -> datetime.datetime:
 
@@ -160,7 +160,7 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
         return data.value_hash
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
-        return DataTypeCharacteristics(is_skalar=False, is_json_serializable=True)
+        return DataTypeCharacteristics(is_scalar=False, is_json_serializable=True)
 
     def parse_python_obj(self, data: Any) -> ListModel:
 
@@ -225,7 +225,7 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
         return data.value_hash
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
-        return DataTypeCharacteristics(is_skalar=False, is_json_serializable=True)
+        return DataTypeCharacteristics(is_scalar=False, is_json_serializable=True)
 
     def parse_python_obj(self, data: Any) -> DictModel:
 
