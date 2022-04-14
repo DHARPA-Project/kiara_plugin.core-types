@@ -63,3 +63,4 @@ onefile.spec
 *_complete.zsh.zwc
 ci/conda/**/build
 ci/conda/kiara_plugin.core_types/meta.yaml
+ci/conda/kiara_plugin.core_types/build_*
