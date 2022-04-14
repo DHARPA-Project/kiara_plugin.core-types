@@ -936,9 +936,9 @@ DateRangeCheckModule            (<span title="kiara.modules.KiaraModule">KiaraMo
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">outputs</span>
 
-    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-        <span class="n">d</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+        <span class="n">d</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
         <span class="n">earliest</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;earliest&quot;</span><span class="p">)</span>
         <span class="n">latest</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;latest&quot;</span><span class="p">)</span>
 
@@ -954,7 +954,7 @@ DateRangeCheckModule            (<span title="kiara.modules.KiaraModule">KiaraMo
         <span class="k">elif</span> <span class="n">earliest</span><span class="p">:</span>
             <span class="n">matches</span> <span class="o">=</span> <span class="n">earliest</span> <span class="o">&lt;=</span> <span class="n">d</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">matches</span> <span class="o">=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">latest</span>
+            <span class="n">matches</span> <span class="o">=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">latest</span>  <span class="c1"># type: ignore</span>
 
         <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;within_range&quot;</span><span class="p">,</span> <span class="n">matches</span><span class="p">)</span>
 </code></pre></div>
@@ -1065,9 +1065,9 @@ DateRangeCheckModule            (<span title="kiara.modules.KiaraModule">KiaraMo
 
         <details class="quote">
           <summary>Source code in <code>core_types/core_types/date.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-    <span class="n">d</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+    <span class="n">d</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
     <span class="n">earliest</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;earliest&quot;</span><span class="p">)</span>
     <span class="n">latest</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;latest&quot;</span><span class="p">)</span>
 
@@ -1083,7 +1083,7 @@ DateRangeCheckModule            (<span title="kiara.modules.KiaraModule">KiaraMo
     <span class="k">elif</span> <span class="n">earliest</span><span class="p">:</span>
         <span class="n">matches</span> <span class="o">=</span> <span class="n">earliest</span> <span class="o">&lt;=</span> <span class="n">d</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">matches</span> <span class="o">=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">latest</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">latest</span>  <span class="c1"># type: ignore</span>
 
     <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;within_range&quot;</span><span class="p">,</span> <span class="n">matches</span><span class="p">)</span>
 </code></pre></div>
@@ -1120,20 +1120,11 @@ ExtractDateModule            (<span title="kiara.modules.KiaraModule">KiaraModul
     <div class="doc doc-contents ">
 
       <p>Extract a date object from a string.</p>
-<p>This module is not really smart yet, currently it uses the following regex to extract a date (which might fail in a lot of cases):</p>
-<div class="codehilite"><pre><span></span><code>r&quot;_(\d{4}-\d{2}-\d{2})_&quot;
-</code></pre></div>
 
         <details class="quote">
           <summary>Source code in <code>core_types/core_types/date.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExtractDateModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Extract a date object from a string.</span>
-
-<span class="sd">    This module is not really smart yet, currently it uses the following regex to extract a date (which might fail in a lot of cases):</span>
-
-<span class="sd">        r&quot;_(\d{4}-\d{2}-\d{2})_&quot;</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Extract a date object from a string.&quot;&quot;&quot;</span>
 
     <span class="n">_module_type_name</span> <span class="o">=</span> <span class="s2">&quot;date.extract_from_string&quot;</span>
 
@@ -1151,7 +1142,7 @@ ExtractDateModule            (<span title="kiara.modules.KiaraModule">KiaraModul
             <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The date extracted from the input string.&quot;</span><span class="p">}</span>
         <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
         <span class="kn">from</span> <span class="nn">dateutil</span> <span class="kn">import</span> <span class="n">parser</span>
 
@@ -1252,7 +1243,7 @@ ExtractDateModule            (<span title="kiara.modules.KiaraModule">KiaraModul
 
         <details class="quote">
           <summary>Source code in <code>core_types/core_types/date.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueSet</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
     <span class="kn">from</span> <span class="nn">dateutil</span> <span class="kn">import</span> <span class="n">parser</span>
 
