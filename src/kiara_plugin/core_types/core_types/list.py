@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from kiara import KiaraModule
-from kiara.models.values.value import ValueSet
+from kiara.models.values.value import ValueMap
 from kiara.modules import ValueSetSchema
 
 
@@ -35,7 +35,7 @@ class IncludedInListCheckModule(KiaraModule):
         }
         return outputs
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
         item_list = inputs.get_value_data("list")
         item = inputs.get_value_data("item")

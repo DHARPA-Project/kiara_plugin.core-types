@@ -3,7 +3,7 @@ import time
 
 from kiara import KiaraModule
 from kiara.models.module import KiaraModuleConfig
-from kiara.models.values.value import ValueSet
+from kiara.models.values.value import ValueMap
 from kiara.modules import ValueSetSchema
 from pydantic import Field
 
@@ -49,7 +49,7 @@ class NotModule(LogicProcessingModule):
             }
         }
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
         """Negates the input boolean."""
 
         time.sleep(self.config.get("delay"))  # type: ignore
@@ -80,7 +80,7 @@ class AndModule(LogicProcessingModule):
             }
         }
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
         time.sleep(self.config.delay)  # type: ignore
 
@@ -114,7 +114,7 @@ class OrModule(LogicProcessingModule):
             }
         }
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
         time.sleep(self.config.get("delay"))  # type: ignore
         outputs.set_value("y", inputs.get_value_data("a") or inputs.get_value_data("b"))

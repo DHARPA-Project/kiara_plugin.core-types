@@ -4,18 +4,12 @@ from typing import Any, Dict, Optional
 
 from kiara import KiaraModule
 from kiara.exceptions import KiaraProcessingException
-from kiara.models.values.value import ValueSet
+from kiara.models.values.value import ValueMap
 from kiara.modules import ValueSetSchema
 
 
 class ExtractDateModule(KiaraModule):
-    """Extract a date object from a string.
-
-    This module is not really smart yet, currently it uses the following regex to extract a date (which might fail in a lot of cases):
-
-        r"_(\d{4}-\d{2}-\d{2})_"
-
-    """
+    """Extract a date object from a string."""
 
     _module_type_name = "date.extract_from_string"
 
@@ -33,7 +27,7 @@ class ExtractDateModule(KiaraModule):
             "date": {"type": "date", "doc": "The date extracted from the input string."}
         }
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
         from dateutil import parser
 
@@ -88,9 +82,9 @@ class DateRangeCheckModule(KiaraModule):
         }
         return outputs
 
-    def process(self, inputs: ValueSet, outputs: ValueSet) -> None:
+    def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
-        d = inputs.get_value_data("date")
+        d: datetime.datetime = inputs.get_value_data("date")
         earliest: Optional[datetime.datetime] = inputs.get_value_data("earliest")
         latest: Optional[datetime.datetime] = inputs.get_value_data("latest")
 
@@ -106,6 +100,6 @@ class DateRangeCheckModule(KiaraModule):
         elif earliest:
             matches = earliest <= d
         else:
-            matches = d <= latest
+            matches = d <= latest  # type: ignore
 
         outputs.set_value("within_range", matches)
