@@ -11,11 +11,12 @@ import orjson
 from kiara.data_types import DataTypeCharacteristics, DataTypeConfig
 from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
+from kiara.models.values.value import Value
 from kiara.utils import orjson_dumps
 from kiara.utils.hashing import compute_hash
 from pydantic import BaseModel
 
-from kiara_plugin.core_types.models import ListModel, DictModel
+from kiara_plugin.core_types.models import DictModel, ListModel
 
 
 class BooleanType(AnyType[bool, DataTypeConfig]):
@@ -64,7 +65,7 @@ class IntegerType(AnyType[int, DataTypeConfig]):
     def python_class(cls) -> Type:
         return int
 
-    def calculate_hash(cls, data: int) -> str:
+    def calculate_hash(cls, data: int) -> int:
         return data
 
     def calculate_size(self, data: int) -> int:
@@ -86,7 +87,7 @@ class FloatType(AnyType[float, DataTypeConfig]):
     def python_class(cls) -> Type:
         return float
 
-    def calculate_value_hash(cls, data: float) -> str:
+    def calculate_value_hash(cls, data: float) -> int:
         return compute_hash(data)
 
     def calculate_size(self, data: int) -> int:
@@ -114,8 +115,8 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
     def python_class(cls) -> Type:
         return datetime.datetime
 
-    def calculate_hash(cls, data: datetime.datetime) -> str:
-        return str(hash(data))
+    def calculate_hash(cls, data: datetime.datetime) -> int:
+        return compute_hash(data)
 
     def calculate_size(self, data: datetime.datetime) -> int:
         return sys.getsizeof(data)
@@ -197,9 +198,7 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
         if not isinstance(data, ListModel):
             raise Exception(f"Invalid type: {type(data)}.")
 
-    def render_as__string(
-        self, value: "Value", render_config: Mapping[str, Any]
-    ) -> str:
+    def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
 
         data: ListModel = value.data
         return orjson_dumps(data.list_data, option=orjson.OPT_INDENT_2)
@@ -260,9 +259,7 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
         if not isinstance(data, DictModel):
             raise Exception(f"Invalid type: {type(data)}.")
 
-    def render_as__string(
-        self, value: "Value", render_config: Mapping[str, Any]
-    ) -> str:
+    def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
 
         data: DictModel = value.data
         return orjson_dumps(data.dict_data, option=orjson.OPT_INDENT_2)

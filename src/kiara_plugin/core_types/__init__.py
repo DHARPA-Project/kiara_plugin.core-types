@@ -3,13 +3,12 @@
 """Top-level package for kiara_plugin.core_types."""
 
 
-import structlog
 import os
 
 from kiara.utils.class_loading import (
     KiaraEntryPointItem,
-    find_kiara_modules_under,
     find_data_types_under,
+    find_kiara_modules_under,
     find_pipeline_base_path_for_module,
     find_value_metadata_models_under,
 )
@@ -18,11 +17,8 @@ __author__ = """Markus Binsteiner"""
 __email__ = "markus@frkl.io"
 
 
-
 KIARA_METADATA = {
-    "authors": [
-        {"name": __author__, "email": __email__}
-    ],
+    "authors": [{"name": __author__, "email": __email__}],
     "description": "Kiara modules for: core-types",
     "references": {
         "source_repo": {
@@ -35,13 +31,12 @@ KIARA_METADATA = {
         },
     },
     "tags": ["core_types"],
-    "labels": {
-        "package": "kiara_plugin.core_types"
-    }
+    "labels": {"package": "kiara_plugin.core_types"},
 }
 
 find_modules: KiaraEntryPointItem = (
-    find_kiara_modules_under, "kiara_plugin.core_types.core_types"
+    find_kiara_modules_under,
+    "kiara_plugin.core_types.core_types",
 )
 find_value_metadata: KiaraEntryPointItem = (
     find_value_metadata_models_under,

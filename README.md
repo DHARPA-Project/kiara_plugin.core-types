@@ -105,4 +105,3 @@ For details (and other, minor targets), check the ``Makefile``.
 ## Copyright & license
 
 This project is MPL v2.0 licensed, for the license text please check the [LICENSE](/LICENSE) file in this repository.
-

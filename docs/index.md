@@ -12,7 +12,7 @@ Core data types for kiara.
 
 ### {{ item_type }}
 {% for item, details in item_group.items() %}
-- [`{{ item }}`][kiara_info.{{ item_type }}.{{ item }}]: {{ details.documentation.description }} 
+- [`{{ item }}`][kiara_info.{{ item_type }}.{{ item }}]: {{ details.documentation.description }}
 {% endfor %}
 {% endfor %}
 
@@ -20,5 +20,3 @@ Core data types for kiara.
 
  - Documentation: [https://DHARPA-Project.github.io/kiara_plugin.core_types](https://DHARPA-Project.github.io/kiara_plugin.core_types)
  - Code: [https://github.com/DHARPA-Project/kiara_plugin.core_types](https://github.com/DHARPA-Project/kiara_plugin.core_types)
-
-
