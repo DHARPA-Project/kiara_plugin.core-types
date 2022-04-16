@@ -73,7 +73,7 @@ class ReplaceStringModule(KiaraModule):
     """Replace a string if it matches a key in a mapping dictionary."""
 
     _config_cls = ReplaceModuleConfig
-    _module_type_name = "replace"
+    _module_type_name = "string.replace"
 
     def create_inputs_schema(
         self,
