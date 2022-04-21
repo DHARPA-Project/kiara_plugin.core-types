@@ -15,10 +15,10 @@
     }
   ],
   "input_aliases": {
-    "or__a": "a",
-    "or__b": "b"
+    "or.a": "a",
+    "or.b": "b"
   },
   "output_aliases": {
-    "not__y": "y"
+    "not.y": "y"
   }
 }

@@ -20,12 +20,12 @@
     }
   ],
   "input_aliases": {
-    "or__a": "a",
-    "or__b": "b",
-    "nand__a": "a",
-    "nand__b": "b"
+    "or.a": "a",
+    "or.b": "b",
+    "nand.a": "a",
+    "nand.b": "b"
   },
   "output_aliases": {
-    "and__y": "y"
+    "and.y": "y"
   }
 }
