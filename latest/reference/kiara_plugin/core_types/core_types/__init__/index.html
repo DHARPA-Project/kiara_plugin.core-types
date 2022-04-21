@@ -595,110 +595,38 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule" class="md-nav__link">
-    ExampleModule
+  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule" class="md-nav__link">
+    SaveInlineStringDataModule
   </a>
   
-    <nav class="md-nav" aria-label="ExampleModule">
+    <nav class="md-nav" aria-label="SaveInlineStringDataModule">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule-classes" class="md-nav__link">
-    Classes
-  </a>
-  
-    <nav class="md-nav" aria-label="Classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule._config_cls" class="md-nav__link">
-    _config_cls
-  </a>
-  
-    <nav class="md-nav" aria-label="_config_cls">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule._config_cls-attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule-methods" class="md-nav__link">
-    Methods
-  </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule.create_inputs_schema" class="md-nav__link">
-    create_inputs_schema()
+  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__boolean" class="md-nav__link">
+    data_type__boolean()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule.create_outputs_schema" class="md-nav__link">
-    create_outputs_schema()
+  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__date" class="md-nav__link">
+    data_type__date()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModule.process" class="md-nav__link">
-    process()
+  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__float" class="md-nav__link">
+    data_type__float()
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModuleConfig" class="md-nav__link">
-    ExampleModuleConfig
+  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__integer" class="md-nav__link">
+    data_type__integer()
   </a>
-  
-    <nav class="md-nav" aria-label="ExampleModuleConfig">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModuleConfig-attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-    <nav class="md-nav" aria-label="Attributes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.ExampleModuleConfig.separator" class="md-nav__link">
-    separator
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1123,99 +1051,53 @@
 
 
 
-<h3 id="kiara_plugin.core_types.core_types.ExampleModule" class="doc doc-heading">
+<h3 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule" class="doc doc-heading">
         <code>
-ExampleModule            (<a class="autorefs autorefs-external" title="kiara.modules.KiaraModule" href="https://dharpa.org/kiara/latest/reference/kiara/modules/__init__/#kiara.modules.KiaraModule">KiaraModule</a>)
+SaveInlineStringDataModule            (<a class="autorefs autorefs-external" title="kiara.modules.included_core_modules.persistence.SaveInlineDataModule" href="https://dharpa.org/kiara/latest/reference/kiara/modules/included_core_modules/persistence/#kiara.modules.included_core_modules.persistence.SaveInlineDataModule">SaveInlineDataModule</a>)
         </code>
 
 
 
-<a href="#kiara_plugin.core_types.core_types.ExampleModule" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
 
-      <p>A very simple example module; concatenate two strings.</p>
-<p>The purpose of this modules is to show the main elements of a <a class="autorefs autorefs-external" href="https://dharpa.org/kiara/latest/reference/kiara/modules/__init__/#kiara.modules.KiaraModule"><code>KiaraModule</code></a>:</p>
-<ul>
-<li><strong><em>the (optional) configuration class</em></strong>: must inherit from <a class="autorefs autorefs-external" href="https://dharpa.org/kiara/latest/reference/kiara/models/module/__init__/#kiara.models.module.KiaraModuleConfig"><code>KiaraModuleConfig</code></a>, and the config class must be set as the <code>_config_cls</code> attribute
-     on the <code>KiaraModule</code> class. Configuration values can be retrieved via the <a class="autorefs autorefs-external" href="https://dharpa.org/kiara/latest/reference/kiara/modules/__init__/#kiara.modules.KiaraModule.get_config_value"><code>self.get_config_value(key)</code></a> method</li>
-<li><strong><em>the inputs description</em></strong>: must return a dictionary, containing the input name(s) as keys, and another dictionary containing type_name information
-     and documentation about the input data as value</li>
-<li><strong><em>the outputs description</em></strong>: must return a dictionary, containing the output name(s) as keys, and another dictionary containing type_name information
-     and documentation about the output data as value</li>
-<li><strong><em>the <code>process</code> method</em></strong>: this is where the actual work gets done. Input data can be accessed via <code>inputs.get_value_data(key)</code>, results
-     can be set with the <code>outputs.set_value(key, value)</code> method</li>
-</ul>
-
-<p><strong>Examples:</strong></p>
-    <p>This example module can be tested on the commandline with the <code>kiara run</code> command:</p>
-<div class="highlight"><pre><span></span><code>kiara run core_types.example text_1=&quot;xxx&quot; text_2=&quot;yyy&quot;
-</code></pre></div>
+      <p>Save some core data types inline.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A very simple example module; concatenate two strings.</span>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SaveInlineStringDataModule</span><span class="p">(</span><span class="n">SaveInlineDataModule</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Save some core data types inline.&quot;&quot;&quot;</span>
 
-<span class="sd">    The purpose of this modules is to show the main elements of a [`KiaraModule`][kiara.modules.KiaraModule]:</span>
+    <span class="n">_module_type_name</span> <span class="o">=</span> <span class="s2">&quot;core_data.save_inline&quot;</span>
 
-<span class="sd">    - ***the (optional) configuration class***: must inherit from [`KiaraModuleConfig`][kiara.modules.KiaraModuleConfig], and the config class must be set as the `_config_cls` attribute</span>
-<span class="sd">         on the `KiaraModule` class. Configuration values can be retrieved via the [`self.get_config_value(key)`][kiara.modules.KiaraModule.get_config_value] method</span>
-<span class="sd">    - ***the inputs description***: must return a dictionary, containing the input name(s) as keys, and another dictionary containing type_name information</span>
-<span class="sd">         and documentation about the input data as value</span>
-<span class="sd">    - ***the outputs description***: must return a dictionary, containing the output name(s) as keys, and another dictionary containing type_name information</span>
-<span class="sd">         and documentation about the output data as value</span>
-<span class="sd">    - ***the ``process`` method***: this is where the actual work gets done. Input data can be accessed via ``inputs.get_value_data(key)``, results</span>
-<span class="sd">         can be set with the ``outputs.set_value(key, value)`` method</span>
+    <span class="k">def</span> <span class="nf">data_type__boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 
-<span class="sd">    Example:</span>
+        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
 
-<span class="sd">        This example module can be tested on the commandline with the ``kiara run`` command:</span>
+    <span class="k">def</span> <span class="nf">data_type__date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 
-<span class="sd">        ```</span>
-<span class="sd">        kiara run core_types.example text_1=&quot;xxx&quot; text_2=&quot;yyy&quot;</span>
-<span class="sd">        ```</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
 
-    <span class="n">_config_cls</span> <span class="o">=</span> <span class="n">ExampleModuleConfig</span>
-    <span class="n">_module_type_name</span> <span class="o">=</span> <span class="s2">&quot;core_types.example&quot;</span>
+    <span class="k">def</span> <span class="nf">data_type__integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 
-    <span class="k">def</span> <span class="nf">create_inputs_schema</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span>
-        <span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">ValueSchema</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]]</span>
-    <span class="p">]:</span>
+        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
 
-        <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;text_1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The first text.&quot;</span><span class="p">},</span>
-            <span class="s2">&quot;text_2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The second text.&quot;</span><span class="p">},</span>
-        <span class="p">}</span>
+    <span class="k">def</span> <span class="nf">data_type__float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 
-        <span class="k">return</span> <span class="n">inputs</span>
-
-    <span class="k">def</span> <span class="nf">create_outputs_schema</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span>
-        <span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">ValueSchema</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]]</span>
-    <span class="p">]:</span>
-
-        <span class="n">outputs</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The concatenated text.&quot;</span><span class="p">,</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">outputs</span>
-
-    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-
-        <span class="n">separator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_config_value</span><span class="p">(</span><span class="s2">&quot;separator&quot;</span><span class="p">)</span>
-
-        <span class="n">text_1</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;text_1&quot;</span><span class="p">)</span>
-        <span class="n">text_2</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;text_2&quot;</span><span class="p">)</span>
-
-        <span class="n">result</span> <span class="o">=</span> <span class="n">text_1</span> <span class="o">+</span> <span class="n">separator</span> <span class="o">+</span> <span class="n">text_2</span>
-        <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
 
@@ -1227,112 +1109,31 @@ ExampleModule            (<a class="autorefs autorefs-external" title="kiara.mod
 
 
 
-<h4 id="kiara_plugin.core_types.core_types.ExampleModule-classes">Classes<a href="#kiara_plugin.core_types.core_types.ExampleModule-classes" class="headerlink" title="Permanent link">&para;</a></h4>
-
-  <div class="doc doc-object doc-class">
 
 
 
-<h5 id="kiara_plugin.core_types.core_types.ExampleModule._config_cls" class="doc doc-heading">
-        <code>
-_config_cls            (<a class="autorefs autorefs-external" title="kiara.models.module.KiaraModuleConfig" href="https://dharpa.org/kiara/latest/reference/kiara/models/module/__init__/#kiara.models.module.KiaraModuleConfig">KiaraModuleConfig</a>)
-        </code>
+
+  <div class="doc doc-object doc-method">
 
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-private"><code>private</code></small>
-      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
-  </span>
 
-<a href="#kiara_plugin.core_types.core_types.ExampleModule._config_cls" class="headerlink" title="Permanent link">&para;</a></h5>
+<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__boolean" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">data_type__boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__boolean" class="headerlink" title="Permanent link">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
 
         <details class="quote">
           <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleModuleConfig</span><span class="p">(</span><span class="n">KiaraModuleConfig</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 
-    <span class="n">separator</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The seperator between the two strings.&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot; - &quot;</span>
+    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
     <span class="p">)</span>
-</code></pre></div>
-        </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-<h6 id="kiara_plugin.core_types.core_types.ExampleModule._config_cls-attributes">Attributes<a href="#kiara_plugin.core_types.core_types.ExampleModule._config_cls-attributes" class="headerlink" title="Permanent link">&para;</a></h6>
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h7 id="kiara_plugin.core_types.core_types.ExampleModule._config_cls.separator" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">separator</span><span class="p">:</span> <span class="nb">str</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-  </span>
-
-<a href="#kiara_plugin.core_types.core_types.ExampleModule._config_cls.separator" class="headerlink" title="Permanent link">&para;</a></h7>
-
-    <div class="doc doc-contents ">
-
-      <p>The seperator between the two strings.</p>
-    </div>
-
-  </div>
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-  </div>
-
-
-
-<h4 id="kiara_plugin.core_types.core_types.ExampleModule-methods">Methods<a href="#kiara_plugin.core_types.core_types.ExampleModule-methods" class="headerlink" title="Permanent link">&para;</a></h4>
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.ExampleModule.create_inputs_schema" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_inputs_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
-
-<a href="#kiara_plugin.core_types.core_types.ExampleModule.create_inputs_schema" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-      <p>Return the schema for this types' inputs.</p>
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_inputs_schema</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span>
-    <span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">ValueSchema</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]]</span>
-<span class="p">]:</span>
-
-    <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;text_1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The first text.&quot;</span><span class="p">},</span>
-        <span class="s2">&quot;text_2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The second text.&quot;</span><span class="p">},</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">inputs</span>
+    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
     </div>
@@ -1345,141 +1146,86 @@ _config_cls            (<a class="autorefs autorefs-external" title="kiara.model
 
 
 
-<h5 id="kiara_plugin.core_types.core_types.ExampleModule.create_outputs_schema" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_outputs_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__date" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">data_type__date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
 
 
-<a href="#kiara_plugin.core_types.core_types.ExampleModule.create_outputs_schema" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-      <p>Return the schema for this types' outputs.</p>
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_outputs_schema</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span>
-    <span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Union</span><span class="p">[</span><span class="n">ValueSchema</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]]</span>
-<span class="p">]:</span>
-
-    <span class="n">outputs</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="s2">&quot;The concatenated text.&quot;</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">outputs</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.ExampleModule.process" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="p">)</span></code>
-
-
-<a href="#kiara_plugin.core_types.core_types.ExampleModule.process" class="headerlink" title="Permanent link">&para;</a></h5>
+<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__date" class="headerlink" title="Permanent link">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
 
         <details class="quote">
           <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
 
-    <span class="n">separator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_config_value</span><span class="p">(</span><span class="s2">&quot;separator&quot;</span><span class="p">)</span>
-
-    <span class="n">text_1</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;text_1&quot;</span><span class="p">)</span>
-    <span class="n">text_2</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;text_2&quot;</span><span class="p">)</span>
-
-    <span class="n">result</span> <span class="o">=</span> <span class="n">text_1</span> <span class="o">+</span> <span class="n">separator</span> <span class="o">+</span> <span class="n">text_2</span>
-    <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-
-
-  </div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-class">
-
-
-
-<h3 id="kiara_plugin.core_types.core_types.ExampleModuleConfig" class="doc doc-heading">
-        <code>
-ExampleModuleConfig            (<a class="autorefs autorefs-external" title="kiara.models.module.KiaraModuleConfig" href="https://dharpa.org/kiara/latest/reference/kiara/models/module/__init__/#kiara.models.module.KiaraModuleConfig">KiaraModuleConfig</a>)
-        </code>
-
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
-  </span>
-
-<a href="#kiara_plugin.core_types.core_types.ExampleModuleConfig" class="headerlink" title="Permanent link">&para;</a></h3>
-
-    <div class="doc doc-contents ">
-
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleModuleConfig</span><span class="p">(</span><span class="n">KiaraModuleConfig</span><span class="p">):</span>
-
-    <span class="n">separator</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The seperator between the two strings.&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot; - &quot;</span>
+    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
     <span class="p">)</span>
+    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-<h4 id="kiara_plugin.core_types.core_types.ExampleModuleConfig-attributes">Attributes<a href="#kiara_plugin.core_types.core_types.ExampleModuleConfig-attributes" class="headerlink" title="Permanent link">&para;</a></h4>
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.ExampleModuleConfig.separator" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">separator</span><span class="p">:</span> <span class="nb">str</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-  </span>
-
-<a href="#kiara_plugin.core_types.core_types.ExampleModuleConfig.separator" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-      <p>The seperator between the two strings.</p>
     </div>
 
   </div>
 
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__float" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">data_type__float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__float" class="headerlink" title="Permanent link">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+
+    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__integer" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">data_type__integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__integer" class="headerlink" title="Permanent link">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+
+    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
 
 
 
