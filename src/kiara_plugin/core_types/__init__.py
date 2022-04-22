@@ -49,6 +49,7 @@ find_data_types: KiaraEntryPointItem = (
 find_pipelines: KiaraEntryPointItem = (
     find_pipeline_base_path_for_module,
     "kiara_plugin.core_types.pipelines",
+    KIARA_METADATA,
 )
 
 
