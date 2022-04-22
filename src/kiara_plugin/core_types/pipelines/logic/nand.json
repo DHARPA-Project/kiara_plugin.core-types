@@ -1,6 +1,6 @@
 {
-  "pipeline_id": "logic.nand",
-  "documentation": "Returns 'False' if both inputs are 'True'.",
+  "pipeline_name": "logic.nand",
+  "doc": "Returns 'False' if both inputs are 'True'.",
   "steps": [
     {
       "module_type": "logic.and",

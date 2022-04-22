@@ -1,6 +1,6 @@
 {
-  "pipeline_id": "logic.xor",
-  "documentation": "Returns 'True' if exactly one of it's two inputs is 'True'.",
+  "pipeline_name": "logic.xor",
+  "doc": "Returns 'True' if exactly one of it's two inputs is 'True'.",
   "steps": [
     {
       "module_type": "logic.or",

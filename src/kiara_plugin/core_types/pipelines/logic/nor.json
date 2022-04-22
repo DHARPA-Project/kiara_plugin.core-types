@@ -1,6 +1,6 @@
 {
-  "pipeline_id": "logic.nor",
-  "documentation": "Returns 'True' if both inputs are 'False'.",
+  "pipeline_name": "logic.nor",
+  "doc": "Returns 'True' if both inputs are 'False'.",
   "steps": [
     {
       "module_type": "logic.or",
