@@ -11,7 +11,7 @@ import orjson
 from kiara.data_types import DataTypeCharacteristics, DataTypeConfig
 from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
-from kiara.models.values.value import Value
+from kiara.models.values.value import SerializedData, Value
 from kiara.utils import orjson_dumps
 from kiara.utils.hashing import compute_hash
 from pydantic import BaseModel
@@ -27,6 +27,10 @@ class BooleanType(AnyType[bool, DataTypeConfig]):
     @classmethod
     def python_class(cls) -> Type:
         return bool
+
+    def serialize(self, data: bool) -> SerializedData:
+        result = self.serialize_as_json(data)
+        return result
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return SCALAR_CHARACTERISTICS
@@ -65,6 +69,10 @@ class IntegerType(AnyType[int, DataTypeConfig]):
     def python_class(cls) -> Type:
         return int
 
+    def serialize(self, data: bool) -> SerializedData:
+        result = self.serialize_as_json(data)
+        return result
+
     def calculate_hash(cls, data: int) -> int:
         return data
 
@@ -86,6 +94,10 @@ class FloatType(AnyType[float, DataTypeConfig]):
     @classmethod
     def python_class(cls) -> Type:
         return float
+
+    def serialize(self, data: bool) -> SerializedData:
+        result = self.serialize_as_json(data)
+        return result
 
     def calculate_value_hash(cls, data: float) -> int:
         return compute_hash(data)
@@ -114,6 +126,10 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
     @classmethod
     def python_class(cls) -> Type:
         return datetime.datetime
+
+    def serialize(self, data: bool) -> SerializedData:
+        result = self.serialize_as_json(data)
+        return result
 
     def calculate_hash(cls, data: datetime.datetime) -> int:
         return compute_hash(data)
