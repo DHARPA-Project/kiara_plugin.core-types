@@ -600,6 +600,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.BooleanType.serialize" class="md-nav__link">
+    serialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.data_types.BooleanType.validate" class="md-nav__link">
     validate()
   </a>
@@ -656,6 +663,13 @@
           <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.data_types.DateType.python_class" class="md-nav__link">
     python_class()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.DateType.serialize" class="md-nav__link">
+    serialize()
   </a>
   
 </li>
@@ -775,6 +789,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.FloatType.serialize" class="md-nav__link">
+    serialize()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -825,6 +846,13 @@
           <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.data_types.IntegerType.python_class" class="md-nav__link">
     python_class()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.IntegerType.serialize" class="md-nav__link">
+    serialize()
   </a>
   
 </li>
@@ -1046,6 +1074,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.BooleanType.serialize" class="md-nav__link">
+    serialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.data_types.BooleanType.validate" class="md-nav__link">
     validate()
   </a>
@@ -1102,6 +1137,13 @@
           <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.data_types.DateType.python_class" class="md-nav__link">
     python_class()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.DateType.serialize" class="md-nav__link">
+    serialize()
   </a>
   
 </li>
@@ -1221,6 +1263,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.FloatType.serialize" class="md-nav__link">
+    serialize()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1271,6 +1320,13 @@
           <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.data_types.IntegerType.python_class" class="md-nav__link">
     python_class()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.IntegerType.serialize" class="md-nav__link">
+    serialize()
   </a>
   
 </li>
@@ -1415,6 +1471,10 @@ BooleanType            (<a class="autorefs autorefs-external" title="kiara.data_
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">bool</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">_retrieve_characteristics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataTypeCharacteristics</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">SCALAR_CHARACTERISTICS</span>
@@ -1617,6 +1677,32 @@ avoid adding or removing information from the data (e.g. by changing the resolut
 
 
 
+<h5 id="kiara_plugin.core_types.data_types.BooleanType.serialize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.data_types.BooleanType.serialize" class="headerlink" title="Permanent link">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>core_types/data_types.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h5 id="kiara_plugin.core_types.data_types.BooleanType.validate" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">validate</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></code>
 
@@ -1681,6 +1767,10 @@ be as string, in which case the <a href="https://dateutil.readthedocs.io/en/stab
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">calculate_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -1867,6 +1957,32 @@ avoid adding or removing information from the data (e.g. by changing the resolut
           <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="kiara_plugin.core_types.data_types.DateType.serialize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.data_types.DateType.serialize" class="headerlink" title="Permanent link">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>core_types/data_types.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
         </details>
     </div>
@@ -2239,6 +2355,10 @@ FloatType            (<a class="autorefs autorefs-external" title="kiara.data_ty
     <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">float</span>
 
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
     <span class="k">def</span> <span class="nf">calculate_value_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -2347,6 +2467,32 @@ FloatType            (<a class="autorefs autorefs-external" title="kiara.data_ty
 
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="kiara_plugin.core_types.data_types.FloatType.serialize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.data_types.FloatType.serialize" class="headerlink" title="Permanent link">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>core_types/data_types.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
 
 
   </div>
@@ -2384,6 +2530,10 @@ IntegerType            (<a class="autorefs autorefs-external" title="kiara.data_
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">calculate_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">data</span>
@@ -2547,6 +2697,32 @@ avoid adding or removing information from the data (e.g. by changing the resolut
           <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">int</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="kiara_plugin.core_types.data_types.IntegerType.serialize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></code>
+
+
+<a href="#kiara_plugin.core_types.data_types.IntegerType.serialize" class="headerlink" title="Permanent link">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>core_types/data_types.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
         </details>
     </div>
