@@ -11,7 +11,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -19,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -601,60 +601,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types-classes" class="md-nav__link">
-    Classes
-  </a>
-  
-    <nav class="md-nav" aria-label="Classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule" class="md-nav__link">
-    SaveInlineStringDataModule
-  </a>
-  
-    <nav class="md-nav" aria-label="SaveInlineStringDataModule">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__boolean" class="md-nav__link">
-    data_type__boolean()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__date" class="md-nav__link">
-    data_type__date()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__float" class="md-nav__link">
-    data_type__float()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__integer" class="md-nav__link">
-    data_type__integer()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.core_types-modules" class="md-nav__link">
     Modules
   </a>
@@ -1058,198 +1004,6 @@
 
 
 
-
-<h2 id="kiara_plugin.core_types.core_types-classes">Classes<a href="#kiara_plugin.core_types.core_types-classes" class="headerlink" title="Permanent link">&para;</a></h2>
-
-  <div class="doc doc-object doc-class">
-
-
-
-<h3 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule" class="doc doc-heading">
-        <code>
-SaveInlineStringDataModule            (<a class="autorefs autorefs-external" title="kiara.modules.included_core_modules.persistence.SaveInlineDataModule" href="https://dharpa.org/kiara/latest/reference/kiara/modules/included_core_modules/persistence/#kiara.modules.included_core_modules.persistence.SaveInlineDataModule">SaveInlineDataModule</a>)
-        </code>
-
-
-
-<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule" class="headerlink" title="Permanent link">&para;</a></h3>
-
-    <div class="doc doc-contents ">
-
-      <p>Save some core data types inline.</p>
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SaveInlineStringDataModule</span><span class="p">(</span><span class="n">SaveInlineDataModule</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Save some core data types inline.&quot;&quot;&quot;</span>
-
-    <span class="n">_module_type_name</span> <span class="o">=</span> <span class="s2">&quot;core_data.save_inline&quot;</span>
-
-    <span class="k">def</span> <span class="nf">data_type__boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">data_type__date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">data_type__integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">data_type__float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-        <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-</code></pre></div>
-        </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__boolean" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">data_type__boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
-
-
-<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__boolean" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__boolean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__date" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">data_type__date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
-
-
-<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__date" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__float" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">data_type__float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
-
-
-<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__float" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__float</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__integer" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">data_type__integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">)</span></code>
-
-
-<a href="#kiara_plugin.core_types.core_types.SaveInlineStringDataModule.data_type__integer" class="headerlink" title="Permanent link">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/core_types/__init__.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">data_type__integer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Value</span><span class="p">,</span> <span class="n">persistence_config</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-
-    <span class="n">load_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_inline_load_config</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="n">value</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">type</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">load_config</span><span class="p">,</span> <span class="kc">None</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-
-
-  </div>
-
-    </div>
-
-  </div>
 
 
 
@@ -3511,7 +3265,7 @@ _config_cls            (<a class="autorefs autorefs-external" title="kiara.model
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.instant", "navigation.tracking"], "search": "../../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>
