@@ -12,7 +12,7 @@ sub-class a pydantic BaseModel or implement custom base classes.
 from typing import Any, Dict, List
 
 from kiara.models.python_class import PythonClass
-from kiara.utils.hashing import compute_hash
+from kiara.utils.hashing import compute_cid
 from pydantic import BaseModel, Field, PrivateAttr
 
 
@@ -43,7 +43,7 @@ class ListModel(BaseModel):
         if self._data_hash is not None:
             return self._data_hash
 
-        self._data_hash = compute_hash(self.list_data)
+        self._data_hash = compute_cid(self.list_data)
         return self._data_hash
 
     @property
@@ -51,7 +51,7 @@ class ListModel(BaseModel):
         if self._schema_hash is not None:
             return self._schema_hash
 
-        self._schema_hash = compute_hash(self.item_schema)
+        self._schema_hash = compute_cid(self.item_schema)
         return self._schema_hash
 
     @property
@@ -60,7 +60,7 @@ class ListModel(BaseModel):
             return self._value_hash
 
         obj = {"data": self.data_hash, "item_schema": self.schema_hash}
-        self._value_hash = compute_hash(obj)
+        self._value_hash = compute_cid(obj)
         return self._value_hash
 
 
@@ -91,7 +91,7 @@ class DictModel(BaseModel):
         if self._data_hash is not None:
             return self._data_hash
 
-        self._data_hash = compute_hash(self.dict_data)
+        self._data_hash = compute_cid(self.dict_data)
         return self._data_hash
 
     @property
@@ -99,7 +99,7 @@ class DictModel(BaseModel):
         if self._schema_hash is not None:
             return self._schema_hash
 
-        self._schema_hash = compute_hash(self.data_schema)
+        self._schema_hash = compute_cid(self.data_schema)
         return self._schema_hash
 
     @property
@@ -108,5 +108,5 @@ class DictModel(BaseModel):
             return self._value_hash
 
         obj = {"data": self.data_hash, "data_schema": self.schema_hash}
-        self._value_hash = compute_hash(obj)
+        self._value_hash = compute_cid(obj)
         return self._value_hash

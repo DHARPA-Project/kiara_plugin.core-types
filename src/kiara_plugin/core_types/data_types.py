@@ -13,7 +13,7 @@ from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
 from kiara.models.values.value import SerializedData, Value
 from kiara.utils import orjson_dumps
-from kiara.utils.hashing import compute_hash
+from kiara.utils.hashing import compute_cid
 from pydantic import BaseModel
 
 from kiara_plugin.core_types.models import DictModel, ListModel
@@ -100,7 +100,7 @@ class FloatType(AnyType[float, DataTypeConfig]):
         return result
 
     def calculate_value_hash(cls, data: float) -> int:
-        return compute_hash(data)
+        return compute_cid(data)
 
     def calculate_size(self, data: int) -> int:
         return sys.getsizeof(data)
@@ -132,7 +132,7 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
         return result
 
     def calculate_hash(cls, data: datetime.datetime) -> int:
-        return compute_hash(data)
+        return compute_cid(data)
 
     def calculate_size(self, data: datetime.datetime) -> int:
         return sys.getsizeof(data)
