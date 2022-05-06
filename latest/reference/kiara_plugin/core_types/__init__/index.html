@@ -3781,7 +3781,7 @@ be as string, in which case the <a href="https://dateutil.readthedocs.io/en/stab
         <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">calculate_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">compute_cid</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -3836,7 +3836,7 @@ be as string, in which case the <a href="https://dateutil.readthedocs.io/en/stab
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">compute_cid</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -4368,7 +4368,7 @@ FloatType            (<a class="autorefs autorefs-external" title="kiara.data_ty
         <span class="k">return</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">calculate_value_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">compute_cid</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">calculate_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -4437,7 +4437,7 @@ FloatType            (<a class="autorefs autorefs-external" title="kiara.data_ty
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_value_hash</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">compute_cid</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -5143,7 +5143,7 @@ DictModel            (<span title="pydantic.main.BaseModel">BaseModel</span>)
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span> <span class="o">=</span> <span class="n">compute_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span> <span class="o">=</span> <span class="n">compute_cid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dict_data</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span>
 
     <span class="nd">@property</span>
@@ -5151,7 +5151,7 @@ DictModel            (<span title="pydantic.main.BaseModel">BaseModel</span>)
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span> <span class="o">=</span> <span class="n">compute_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_schema</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span> <span class="o">=</span> <span class="n">compute_cid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_schema</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span>
 
     <span class="nd">@property</span>
@@ -5160,7 +5160,7 @@ DictModel            (<span title="pydantic.main.BaseModel">BaseModel</span>)
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span>
 
         <span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_hash</span><span class="p">,</span> <span class="s2">&quot;data_schema&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema_hash</span><span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span> <span class="o">=</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span> <span class="o">=</span> <span class="n">compute_cid</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span>
 </code></pre></div>
         </details>
@@ -5392,7 +5392,7 @@ ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>)
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span> <span class="o">=</span> <span class="n">compute_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span> <span class="o">=</span> <span class="n">compute_cid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list_data</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_hash</span>
 
     <span class="nd">@property</span>
@@ -5400,7 +5400,7 @@ ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>)
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span> <span class="o">=</span> <span class="n">compute_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item_schema</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span> <span class="o">=</span> <span class="n">compute_cid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item_schema</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema_hash</span>
 
     <span class="nd">@property</span>
@@ -5409,7 +5409,7 @@ ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>)
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span>
 
         <span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_hash</span><span class="p">,</span> <span class="s2">&quot;item_schema&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema_hash</span><span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span> <span class="o">=</span> <span class="n">compute_hash</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span> <span class="o">=</span> <span class="n">compute_cid</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_hash</span>
 </code></pre></div>
         </details>
