@@ -23,7 +23,7 @@ requirements:
     - setuptools_scm_git_archive
   run:
     - python
-    - kiara>=0.4.0
+    - kiara>=0.4.3
 
 about:
   home: https://github.com/DHARPA-Project/kiara_plugin.core_types
