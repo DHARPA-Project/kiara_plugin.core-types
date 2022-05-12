@@ -1,6 +1,6 @@
 {
-  "template": "https://github.com/DHARPA-Project/kiara_plugin.project_template.git",
-  "commit": "0f8ca1a7f719818863de8cf4c17312acf9c9766e",
+  "template": "https://github.com/DHARPA-Project/kiara_plugin.develop.git",
+  "commit": "e72f603925fdd2c531c4fe7468d4c1f83610a741",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -14,7 +14,7 @@
       "_extensions": [
         "cookiecutter.extensions.JsonifyExtension"
       ],
-      "_template": "https://github.com/DHARPA-Project/kiara_plugin.project_template.git"
+      "_template": "https://github.com/DHARPA-Project/kiara_plugin.develop.git"
     }
   },
   "directory": null
