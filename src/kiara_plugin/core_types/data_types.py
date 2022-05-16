@@ -219,6 +219,11 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
         data: ListModel = value.data
         return orjson_dumps(data.list_data, option=orjson.OPT_INDENT_2)
 
+    def serialize(self, data: DictModel) -> SerializedData:
+
+        result = self.serialize_as_json(data.dict())
+        return result
+
 
 class DictValueType(AnyType[DictModel, DataTypeConfig]):
     """A dictionary.
@@ -279,3 +284,8 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
 
         data: DictModel = value.data
         return orjson_dumps(data.dict_data, option=orjson.OPT_INDENT_2)
+
+    def serialize(self, data: DictModel) -> SerializedData:
+
+        result = self.serialize_as_json(data.dict())
+        return result
