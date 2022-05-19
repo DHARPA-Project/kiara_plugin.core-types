@@ -182,32 +182,32 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
     def parse_python_obj(self, data: Any) -> ListModel:
 
         python_cls = data.__class__
-        data = None
-        schema = None
+        _data = None
+        _schema = None
 
         if isinstance(data, Iterable):
-            schema = {"title": "list", "type": "object"}
-            data = data
+            _schema = {"title": "list", "type": "object"}
+            _data = data
         elif isinstance(data, str):
             try:
-                data = orjson.loads(data)
-                if not isinstance(data, str) and isinstance(list, Iterable):
-                    schema = {"title": "dict", "type": "object"}
+                _data = orjson.loads(data)
+                if not isinstance(_data, str) and isinstance(list, Iterable):
+                    _schema = {"title": "dict", "type": "object"}
             except Exception:
-                if isinstance(data, str):
+                if isinstance(_data, str):
                     raise Exception(
                         "Can't create list: can't parse string as json into list."
                     )
 
-        if data is None or schema is None:
-            raise Exception(f"Invalid data for value type 'dict': {data}")
+        if _data is None or _schema is None:
+            raise Exception(f"Invalid data for value type 'list': {data}")
 
         result = {
-            "data": data,
-            "item_schema": schema,
+            "list_data": _data,
+            "item_schema": _schema,
             "python_class": PythonClass.from_class(python_cls).dict(),
         }
-        return ListModel.construct(**result)
+        return ListModel(**result)
 
     def _validate(self, data: ListModel) -> None:
 
