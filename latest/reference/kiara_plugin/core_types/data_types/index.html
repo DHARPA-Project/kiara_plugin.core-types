@@ -298,20 +298,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../info/operations/" class="md-nav__link">
-        operations
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -2850,6 +2836,10 @@ dictionary. In case no schema was attached, a simple generic one is attached.</p
         <span class="n">_data</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">_schema</span> <span class="o">=</span> <span class="kc">None</span>
 
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;list_data&quot;</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">list_model</span> <span class="o">=</span> <span class="n">ListModel</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">list_model</span>
+
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
             <span class="n">_schema</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">}</span>
             <span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
@@ -2872,7 +2862,9 @@ dictionary. In case no schema was attached, a simple generic one is attached.</p
             <span class="s2">&quot;item_schema&quot;</span><span class="p">:</span> <span class="n">_schema</span><span class="p">,</span>
             <span class="s2">&quot;python_class&quot;</span><span class="p">:</span> <span class="n">PythonClass</span><span class="o">.</span><span class="n">from_class</span><span class="p">(</span><span class="n">python_cls</span><span class="p">)</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">ListModel</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="n">result_model</span> <span class="o">=</span> <span class="n">ListModel</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result_model</span>
 
     <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">ListModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
@@ -2884,7 +2876,7 @@ dictionary. In case no schema was attached, a simple generic one is attached.</p
         <span class="n">data</span><span class="p">:</span> <span class="n">ListModel</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">data</span>
         <span class="k">return</span> <span class="n">orjson_dumps</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">list_data</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="n">orjson</span><span class="o">.</span><span class="n">OPT_INDENT_2</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DictModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">ListModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
 
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">result</span>
@@ -3014,6 +3006,10 @@ avoid adding or removing information from the data (e.g. by changing the resolut
     <span class="n">_data</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">_schema</span> <span class="o">=</span> <span class="kc">None</span>
 
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;list_data&quot;</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">list_model</span> <span class="o">=</span> <span class="n">ListModel</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">list_model</span>
+
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
         <span class="n">_schema</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">}</span>
         <span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
@@ -3036,7 +3032,9 @@ avoid adding or removing information from the data (e.g. by changing the resolut
         <span class="s2">&quot;item_schema&quot;</span><span class="p">:</span> <span class="n">_schema</span><span class="p">,</span>
         <span class="s2">&quot;python_class&quot;</span><span class="p">:</span> <span class="n">PythonClass</span><span class="o">.</span><span class="n">from_class</span><span class="p">(</span><span class="n">python_cls</span><span class="p">)</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ListModel</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="n">result_model</span> <span class="o">=</span> <span class="n">ListModel</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result_model</span>
 </code></pre></div>
         </details>
     </div>
@@ -3116,7 +3114,7 @@ avoid adding or removing information from the data (e.g. by changing the resolut
 
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DictModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">ListModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SerializedData</span><span class="p">:</span>
 
     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serialize_as_json</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">result</span>
