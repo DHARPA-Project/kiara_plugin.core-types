@@ -185,6 +185,10 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
         _data = None
         _schema = None
 
+        if isinstance(data, Mapping) and "list_data" in data.keys():
+            list_model = ListModel(**data)
+            return list_model
+
         if isinstance(data, Iterable):
             _schema = {"title": "list", "type": "object"}
             _data = data
@@ -207,7 +211,9 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
             "item_schema": _schema,
             "python_class": PythonClass.from_class(python_cls).dict(),
         }
-        return ListModel(**result)
+
+        result_model = ListModel(**result)
+        return result_model
 
     def _validate(self, data: ListModel) -> None:
 
@@ -219,7 +225,7 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
         data: ListModel = value.data
         return orjson_dumps(data.list_data, option=orjson.OPT_INDENT_2)
 
-    def serialize(self, data: DictModel) -> SerializedData:
+    def serialize(self, data: ListModel) -> SerializedData:
 
         result = self.serialize_as_json(data.dict())
         return result
