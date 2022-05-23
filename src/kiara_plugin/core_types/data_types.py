@@ -259,6 +259,20 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
         dict_data = None
         schema = None
         if isinstance(data, Mapping):
+
+            if (
+                len(data) == 3
+                and "data" in data.keys()
+                and "data_schema" in data.keys()
+                and "python_class" in data.keys()
+            ):
+                dict_model = DictModel(
+                    dict_data=data["data"],
+                    data_schema=data["data_schema"],
+                    python_class=data["python_class"],
+                )
+                return dict_model
+
             schema = {"title": "dict", "type": "object"}
             dict_data = data
         elif isinstance(data, BaseModel):
