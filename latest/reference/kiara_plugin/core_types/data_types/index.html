@@ -2133,11 +2133,11 @@ dictionary. In case no schema was attached, a simple generic one is attached.</p
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid data for value type &#39;dict&#39;: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">dict_data</span><span class="p">,</span>
+            <span class="s2">&quot;dict_data&quot;</span><span class="p">:</span> <span class="n">dict_data</span><span class="p">,</span>
             <span class="s2">&quot;data_schema&quot;</span><span class="p">:</span> <span class="n">schema</span><span class="p">,</span>
             <span class="s2">&quot;python_class&quot;</span><span class="p">:</span> <span class="n">PythonClass</span><span class="o">.</span><span class="n">from_class</span><span class="p">(</span><span class="n">python_cls</span><span class="p">)</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">DictModel</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">DictModel</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DictModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
@@ -2309,11 +2309,11 @@ avoid adding or removing information from the data (e.g. by changing the resolut
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid data for value type &#39;dict&#39;: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">dict_data</span><span class="p">,</span>
+        <span class="s2">&quot;dict_data&quot;</span><span class="p">:</span> <span class="n">dict_data</span><span class="p">,</span>
         <span class="s2">&quot;data_schema&quot;</span><span class="p">:</span> <span class="n">schema</span><span class="p">,</span>
         <span class="s2">&quot;python_class&quot;</span><span class="p">:</span> <span class="n">PythonClass</span><span class="o">.</span><span class="n">from_class</span><span class="p">(</span><span class="n">python_cls</span><span class="p">)</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">DictModel</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">DictModel</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
