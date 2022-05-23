@@ -289,11 +289,11 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
             raise Exception(f"Invalid data for value type 'dict': {data}")
 
         result = {
-            "data": dict_data,
+            "dict_data": dict_data,
             "data_schema": schema,
             "python_class": PythonClass.from_class(python_cls).dict(),
         }
-        return DictModel.construct(**result)
+        return DictModel(**result)
 
     def _validate(self, data: DictModel) -> None:
 
