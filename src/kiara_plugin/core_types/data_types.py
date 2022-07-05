@@ -15,6 +15,9 @@ from kiara.models.values.value import SerializedData, Value
 from kiara.utils import orjson_dumps
 from kiara.utils.hashing import compute_cid
 from pydantic import BaseModel
+from rich import box
+from rich.syntax import Syntax
+from rich.table import Table
 
 from kiara_plugin.core_types.models import DictModel, ListModel
 
@@ -158,11 +161,7 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
 
 
 class ListValueType(AnyType[ListModel, DataTypeConfig]):
-    """A dictionary.
-
-    In addition to the actual dictionary value, this value type comes also with an optional schema, describing the
-    dictionary. In case no schema was attached, a simple generic one is attached.
-    """
+    """A list."""
 
     _data_type_name = "list"
 
@@ -304,6 +303,30 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
 
         data: DictModel = value.data
         return orjson_dumps(data.dict_data, option=orjson.OPT_INDENT_2)
+
+    def pretty_print_as__terminal_renderable(
+        self, value: Value, render_config: Mapping[str, Any]
+    ):
+
+        show_schema = render_config.get("show_schema", True)
+
+        table = Table(show_header=False, box=box.SIMPLE)
+        table.add_column("key", style="i")
+        table.add_column("value")
+
+        data: DictModel = value.data
+        data_json = orjson_dumps(data.dict_data, option=orjson.OPT_INDENT_2)
+        table.add_row(
+            "dict data", Syntax(data_json, "json", background_color="default")
+        )
+
+        if show_schema:
+            schema_json = orjson_dumps(data.data_schema, option=orjson.OPT_INDENT_2)
+            table.add_row(
+                "dict schema", Syntax(schema_json, "json", background_color="default")
+            )
+
+        return table
 
     def serialize(self, data: DictModel) -> SerializedData:
 

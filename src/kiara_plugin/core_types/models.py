@@ -9,14 +9,19 @@ Metadata models must be a sub-class of [kiara.metadata.MetadataModel][kiara.meta
 sub-class a pydantic BaseModel or implement custom base classes.
 """
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Mapping, Sequence
 
+import orjson
 from kiara.models.python_class import PythonClass
+from kiara.utils import orjson_dumps
 from kiara.utils.hashing import compute_cid
 from pydantic import BaseModel, Field, PrivateAttr
 
 
-class ListModel(BaseModel):
+class ListModel(BaseModel, Sequence):
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
 
     list_data: List[Any] = Field(description="The data.")
     item_schema: Dict[str, Any] = Field(description="The schema.")
@@ -63,8 +68,18 @@ class ListModel(BaseModel):
         self._value_hash = compute_cid(obj)
         return self._value_hash
 
+    def __getitem__(self, item):
 
-class DictModel(BaseModel):
+        return self.list_data.__getitem__(item)
+
+    def __len__(self):
+        return self.list_data.__len__()
+
+
+class DictModel(BaseModel, Mapping):
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
 
     dict_data: Dict[str, Any] = Field(description="The data.")
     data_schema: Dict[str, Any] = Field(description="The schema.")
@@ -110,3 +125,12 @@ class DictModel(BaseModel):
         obj = {"data": self.data_hash, "data_schema": self.schema_hash}
         self._value_hash = compute_cid(obj)
         return self._value_hash
+
+    def __getitem__(self, item):
+        return self.dict_data.__getitem__(item)
+
+    def __iter__(self):
+        return self.dict_data.__iter__()
+
+    def __len__(self):
+        return self.dict_data.__len__()
