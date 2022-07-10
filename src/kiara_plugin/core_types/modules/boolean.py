@@ -21,6 +21,7 @@ class LogicProcessingModuleConfig(KiaraModuleConfig):
 class LogicProcessingModule(KiaraModule):
 
     _config_cls = LogicProcessingModuleConfig
+    _is_abstract = True
 
 
 class NotModule(LogicProcessingModule):

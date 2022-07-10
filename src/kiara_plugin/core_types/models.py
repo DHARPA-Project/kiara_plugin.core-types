@@ -13,8 +13,8 @@ from typing import Any, Dict, List, Mapping, Sequence
 
 import orjson
 from kiara.models.python_class import PythonClass
-from kiara.utils import orjson_dumps
 from kiara.utils.hashing import compute_cid
+from kiara.utils.json import orjson_dumps
 from pydantic import BaseModel, Field, PrivateAttr
 
 
