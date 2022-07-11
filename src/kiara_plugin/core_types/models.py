@@ -72,6 +72,9 @@ class ListModel(BaseModel, Sequence):
 
         return self.list_data.__getitem__(item)
 
+    def __iter__(self):
+        return self.list_data.__iter__()
+
     def __len__(self):
         return self.list_data.__len__()
 
