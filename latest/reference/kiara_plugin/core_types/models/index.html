@@ -1466,6 +1466,9 @@ ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>, <s
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_data</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_data</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
+
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_data</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
 </code></pre></div>
