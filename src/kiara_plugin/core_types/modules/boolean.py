@@ -19,6 +19,7 @@ class LogicProcessingModuleConfig(KiaraModuleConfig):
 
 
 class LogicProcessingModule(KiaraModule):
+    """Base class for logic-related kiara modules."""
 
     _config_cls = LogicProcessingModuleConfig
     _is_abstract = True

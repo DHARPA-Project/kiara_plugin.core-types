@@ -161,7 +161,11 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
 
 
 class ListValueType(AnyType[ListModel, DataTypeConfig]):
-    """A list."""
+    """A list.
+
+    Backed by the [kiara_plugin.core_types.models.ListModel] class, this data type allows to (optionally) specify
+    a schema for the items in the list.
+    """
 
     _data_type_name = "list"
 
@@ -234,7 +238,8 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
     """A dictionary.
 
     In addition to the actual dictionary value, this value type comes also with an optional schema, describing the
-    dictionary. In case no schema was attached, a simple generic one is attached.
+    dictionary. In case no schema was attached, a simple generic one is attached. This data type is backed by the
+    [DictModel][kiara_plugin.core_types.models.DictModel] class.
     """
 
     _data_type_name = "dict"

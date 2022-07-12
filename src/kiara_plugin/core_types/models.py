@@ -19,6 +19,8 @@ from pydantic import BaseModel, Field, PrivateAttr
 
 
 class ListModel(BaseModel, Sequence):
+    """A list implentation that contains (optional) schema information of the lists items."""
+
     class Config:
         json_loads = orjson.loads
         json_dumps = orjson_dumps
@@ -80,6 +82,8 @@ class ListModel(BaseModel, Sequence):
 
 
 class DictModel(BaseModel, Mapping):
+    """A dict implentation that contains (optional) schema information of the dicts items."""
+
     class Config:
         json_loads = orjson.loads
         json_dumps = orjson_dumps

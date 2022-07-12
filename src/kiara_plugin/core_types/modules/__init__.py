@@ -14,6 +14,7 @@ log = structlog.getLogger()
 
 
 class KiaraInputsConfig(KiaraModuleConfig):
+    """Base configuration that helps translating module config options into user input schemas."""
 
     add_inputs: bool = Field(
         description="If set to 'True', parse options will be available as inputs.",
@@ -92,6 +93,7 @@ KIARA_INPUTS_CONFIG = TypeVar("KIARA_INPUTS_CONFIG", bound=KiaraInputsConfig)
 
 
 class AutoInputsKiaraModule(KiaraModule):
+    """Base class for kiara modules that want to expose module configuration via user inputs."""
 
     _config_cls: Type[KIARA_INPUTS_CONFIG] = KiaraInputsConfig  # type: ignore
     _is_abstract = True
