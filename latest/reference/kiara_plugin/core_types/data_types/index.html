@@ -2086,7 +2086,8 @@ DictValueType            (<a class="autorefs autorefs-external" title="kiara.dat
 
       <p>A dictionary.</p>
 <p>In addition to the actual dictionary value, this value type comes also with an optional schema, describing the
-dictionary. In case no schema was attached, a simple generic one is attached.</p>
+dictionary. In case no schema was attached, a simple generic one is attached. This data type is backed by the
+<a class="autorefs autorefs-internal" href="../models/#kiara_plugin.core_types.models.DictModel">DictModel</a> class.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
@@ -2094,7 +2095,8 @@ dictionary. In case no schema was attached, a simple generic one is attached.</p
     <span class="sd">&quot;&quot;&quot;A dictionary.</span>
 
 <span class="sd">    In addition to the actual dictionary value, this value type comes also with an optional schema, describing the</span>
-<span class="sd">    dictionary. In case no schema was attached, a simple generic one is attached.</span>
+<span class="sd">    dictionary. In case no schema was attached, a simple generic one is attached. This data type is backed by the</span>
+<span class="sd">    [DictModel][kiara_plugin.core_types.models.DictModel] class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_data_type_name</span> <span class="o">=</span> <span class="s2">&quot;dict&quot;</span>
@@ -2930,11 +2932,17 @@ ListValueType            (<a class="autorefs autorefs-external" title="kiara.dat
     <div class="doc doc-contents ">
 
       <p>A list.</p>
+<p>Backed by the [kiara_plugin.core_types.models.ListModel] class, this data type allows to (optionally) specify
+a schema for the items in the list.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ListValueType</span><span class="p">(</span><span class="n">AnyType</span><span class="p">[</span><span class="n">ListModel</span><span class="p">,</span> <span class="n">DataTypeConfig</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;A list.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;A list.</span>
+
+<span class="sd">    Backed by the [kiara_plugin.core_types.models.ListModel] class, this data type allows to (optionally) specify</span>
+<span class="sd">    a schema for the items in the list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_data_type_name</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span>
 

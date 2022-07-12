@@ -1906,7 +1906,8 @@ DictValueType            (<a class="autorefs autorefs-external" title="kiara.dat
 
       <p>A dictionary.</p>
 <p>In addition to the actual dictionary value, this value type comes also with an optional schema, describing the
-dictionary. In case no schema was attached, a simple generic one is attached.</p>
+dictionary. In case no schema was attached, a simple generic one is attached. This data type is backed by the
+<a class="autorefs autorefs-internal" href="../models/#kiara_plugin.core_types.models.DictModel">DictModel</a> class.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
@@ -1914,7 +1915,8 @@ dictionary. In case no schema was attached, a simple generic one is attached.</p
     <span class="sd">&quot;&quot;&quot;A dictionary.</span>
 
 <span class="sd">    In addition to the actual dictionary value, this value type comes also with an optional schema, describing the</span>
-<span class="sd">    dictionary. In case no schema was attached, a simple generic one is attached.</span>
+<span class="sd">    dictionary. In case no schema was attached, a simple generic one is attached. This data type is backed by the</span>
+<span class="sd">    [DictModel][kiara_plugin.core_types.models.DictModel] class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_data_type_name</span> <span class="o">=</span> <span class="s2">&quot;dict&quot;</span>
@@ -2750,11 +2752,17 @@ ListValueType            (<a class="autorefs autorefs-external" title="kiara.dat
     <div class="doc doc-contents ">
 
       <p>A list.</p>
+<p>Backed by the [kiara_plugin.core_types.models.ListModel] class, this data type allows to (optionally) specify
+a schema for the items in the list.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/data_types.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ListValueType</span><span class="p">(</span><span class="n">AnyType</span><span class="p">[</span><span class="n">ListModel</span><span class="p">,</span> <span class="n">DataTypeConfig</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;A list.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;A list.</span>
+
+<span class="sd">    Backed by the [kiara_plugin.core_types.models.ListModel] class, this data type allows to (optionally) specify</span>
+<span class="sd">    a schema for the items in the list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_data_type_name</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span>
 
@@ -3136,10 +3144,13 @@ DictModel            (<span title="pydantic.main.BaseModel">BaseModel</span>, <s
 
     <div class="doc doc-contents ">
 
+      <p>A dict implentation that contains (optional) schema information of the dicts items.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/models.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DictModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A dict implentation that contains (optional) schema information of the dicts items.&quot;&quot;&quot;</span>
+
     <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
         <span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span>
         <span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span>
@@ -3496,10 +3507,13 @@ ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>, <s
 
     <div class="doc doc-contents ">
 
+      <p>A list implentation that contains (optional) schema information of the lists items.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/models.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ListModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A list implentation that contains (optional) schema information of the lists items.&quot;&quot;&quot;</span>
+
     <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
         <span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span>
         <span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span>
@@ -3929,10 +3943,12 @@ AutoInputsKiaraModule            (<a class="autorefs autorefs-external" title="k
 
     <div class="doc doc-contents ">
 
+      <p>Base class for kiara modules that want to expose module configuration via user inputs.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/modules/__init__.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">AutoInputsKiaraModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class for kiara modules that want to expose module configuration via user inputs.&quot;&quot;&quot;</span>
 
     <span class="n">_config_cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">KIARA_INPUTS_CONFIG</span><span class="p">]</span> <span class="o">=</span> <span class="n">KiaraInputsConfig</span>  <span class="c1"># type: ignore</span>
     <span class="n">_is_abstract</span> <span class="o">=</span> <span class="kc">True</span>
@@ -4024,10 +4040,12 @@ _config_cls            (<a class="autorefs autorefs-external" title="kiara.model
 
     <div class="doc doc-contents ">
 
+      <p>Base configuration that helps translating module config options into user input schemas.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/modules/__init__.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraInputsConfig</span><span class="p">(</span><span class="n">KiaraModuleConfig</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base configuration that helps translating module config options into user input schemas.&quot;&quot;&quot;</span>
 
     <span class="n">add_inputs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
         <span class="n">description</span><span class="o">=</span><span class="s2">&quot;If set to &#39;True&#39;, parse options will be available as inputs.&quot;</span><span class="p">,</span>
@@ -4318,10 +4336,12 @@ KiaraInputsConfig            (<a class="autorefs autorefs-external" title="kiara
 
     <div class="doc doc-contents ">
 
+      <p>Base configuration that helps translating module config options into user input schemas.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/modules/__init__.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraInputsConfig</span><span class="p">(</span><span class="n">KiaraModuleConfig</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base configuration that helps translating module config options into user input schemas.&quot;&quot;&quot;</span>
 
     <span class="n">add_inputs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
         <span class="n">description</span><span class="o">=</span><span class="s2">&quot;If set to &#39;True&#39;, parse options will be available as inputs.&quot;</span><span class="p">,</span>
@@ -4758,10 +4778,12 @@ LogicProcessingModule            (<a class="autorefs autorefs-external" title="k
 
     <div class="doc doc-contents ">
 
+      <p>Base class for logic-related kiara modules.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/modules/boolean.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">LogicProcessingModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base class for logic-related kiara modules.&quot;&quot;&quot;</span>
 
     <span class="n">_config_cls</span> <span class="o">=</span> <span class="n">LogicProcessingModuleConfig</span>
     <span class="n">_is_abstract</span> <span class="o">=</span> <span class="kc">True</span>
@@ -5567,11 +5589,17 @@ ExtractDateModule            (<a class="autorefs autorefs-external" title="kiara
     <div class="doc doc-contents ">
 
       <p>Extract a date object from a string.</p>
+<p>This module is very bare bones so far, only using the standard parser from the
+<a href="https://github.com/dateutil/dateutil">dateutil</a> package to parse strings into dates.</p>
 
         <details class="quote">
           <summary>Source code in <code>core_types/modules/date.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExtractDateModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Extract a date object from a string.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Extract a date object from a string.</span>
+
+<span class="sd">    This module is very bare bones so far, only using the standard parser from the</span>
+<span class="sd">    [dateutil](https://github.com/dateutil/dateutil) package to parse strings into dates.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_module_type_name</span> <span class="o">=</span> <span class="s2">&quot;date.extract_from_string&quot;</span>
 
@@ -5597,7 +5625,7 @@ ExtractDateModule            (<a class="autorefs autorefs-external" title="kiara
         <span class="c1"># date_match = re.findall(r&quot;_(\d{4}-\d{2}-\d{2})_&quot;, text)</span>
         <span class="c1"># assert date_match</span>
         <span class="c1"># d_obj = parser.parse(date_match[0])  # type: ignore</span>
-        <span class="n">d_obj</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">d_obj</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">fuzzy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">d_obj</span><span class="p">)</span>
 </code></pre></div>
@@ -5698,7 +5726,7 @@ ExtractDateModule            (<a class="autorefs autorefs-external" title="kiara
     <span class="c1"># date_match = re.findall(r&quot;_(\d{4}-\d{2}-\d{2})_&quot;, text)</span>
     <span class="c1"># assert date_match</span>
     <span class="c1"># d_obj = parser.parse(date_match[0])  # type: ignore</span>
-    <span class="n">d_obj</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">d_obj</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">fuzzy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">d_obj</span><span class="p">)</span>
 </code></pre></div>
