@@ -2,10 +2,9 @@
 import datetime
 from typing import Any, Dict, Optional
 
-from kiara import KiaraModule
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.values.value import ValueMap
-from kiara.modules import ValueSetSchema
+from kiara.modules import KiaraModule, ValueSetSchema
 
 
 class ExtractDateModule(KiaraModule):
