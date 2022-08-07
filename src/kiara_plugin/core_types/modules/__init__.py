@@ -2,10 +2,7 @@
 from typing import Any, Dict, List, Mapping, Type, TypeVar, Union
 
 import structlog
-from kiara.models.module import KiaraModuleConfig
-from kiara.models.values.value import ValueMap
-from kiara.models.values.value_schema import ValueSchema
-from kiara.modules import KiaraModule
+from kiara import KiaraModule, KiaraModuleConfig, ValueMap, ValueSchema
 from kiara.utils.values import create_schema_dict, overlay_constants_and_defaults
 from pydantic import Field
 from pydantic.fields import SHAPE_DICT, SHAPE_LIST, ModelField
