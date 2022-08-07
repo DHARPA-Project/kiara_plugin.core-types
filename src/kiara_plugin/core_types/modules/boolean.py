@@ -3,7 +3,7 @@ import time
 
 from kiara.models.module import KiaraModuleConfig
 from kiara.models.values.value import ValueMap
-from kiara.modules import KiaraModule, ValueSetSchema
+from kiara.modules import KiaraModule, ValueMapSchema
 from pydantic import Field
 
 
@@ -31,7 +31,7 @@ class NotModule(LogicProcessingModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
         """The not module only has one input, a boolean that will be negated by the module."""
 
         return {
@@ -40,7 +40,7 @@ class NotModule(LogicProcessingModule):
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
         """The output of this module is a single boolean, the negated input."""
 
         return {
@@ -65,7 +65,7 @@ class AndModule(LogicProcessingModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
         return {
             "a": {"type": "boolean", "doc": "A boolean describing this input state."},
             "b": {"type": "boolean", "doc": "A boolean describing this input state."},
@@ -73,7 +73,7 @@ class AndModule(LogicProcessingModule):
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
         return {
             "y": {
                 "type": "boolean",
@@ -97,7 +97,7 @@ class OrModule(LogicProcessingModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         return {
             "a": {"type": "boolean", "doc": "A boolean describing this input state."},
@@ -106,7 +106,7 @@ class OrModule(LogicProcessingModule):
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         return {
             "y": {

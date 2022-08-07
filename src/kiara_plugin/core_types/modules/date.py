@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional
 
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.values.value import ValueMap
-from kiara.modules import KiaraModule, ValueSetSchema
+from kiara.modules import KiaraModule, ValueMapSchema
 
 
 class ExtractDateModule(KiaraModule):
@@ -18,13 +18,13 @@ class ExtractDateModule(KiaraModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         return {"text": {"type": "string", "doc": "The input string."}}
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         return {
             "date": {"type": "date", "doc": "The date extracted from the input string."}
@@ -55,7 +55,7 @@ class DateRangeCheckModule(KiaraModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         inputs: Dict[str, Dict[str, Any]] = {
             "date": {"type": "date", "doc": "The date to check."},
@@ -75,7 +75,7 @@ class DateRangeCheckModule(KiaraModule):
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         outputs = {
             "within_range": {

@@ -5,7 +5,7 @@ import typing
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.module import KiaraModuleConfig
 from kiara.models.values.value import ValueMap
-from kiara.modules import KiaraModule, ValueSetSchema
+from kiara.modules import KiaraModule, ValueMapSchema
 from pydantic import Field
 
 
@@ -26,12 +26,12 @@ class RegexModule(KiaraModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
         return {"text": {"type": "string", "doc": "The text to match."}}
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         if self.get_config_value("only_first_match"):
             output_schema = {"text": {"type": "string", "doc": "The first match."}}
@@ -76,13 +76,13 @@ class ReplaceStringModule(KiaraModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         return {"text": {"type": "string", "doc": "The input string."}}
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
         return {"text": {"type": "string", "doc": "The replaced string."}}
 
     def process(self, inputs: ValueMap, outputs: ValueMap) -> None:

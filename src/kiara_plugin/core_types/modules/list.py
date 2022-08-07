@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from kiara.models.values.value import ValueMap
-from kiara.modules import KiaraModule, ValueSetSchema
+from kiara.modules import KiaraModule, ValueMapSchema
 
 
 class IncludedInListCheckModule(KiaraModule):
@@ -11,7 +11,7 @@ class IncludedInListCheckModule(KiaraModule):
 
     def create_inputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         inputs = {
             "list": {"type": "list", "doc": "The list."},
@@ -24,7 +24,7 @@ class IncludedInListCheckModule(KiaraModule):
 
     def create_outputs_schema(
         self,
-    ) -> ValueSetSchema:
+    ) -> ValueMapSchema:
 
         outputs = {
             "is_included": {
