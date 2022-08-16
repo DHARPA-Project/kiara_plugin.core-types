@@ -223,10 +223,10 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
         if not isinstance(data, ListModel):
             raise Exception(f"Invalid type: {type(data)}.")
 
-    def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
-
-        data: ListModel = value.data
-        return orjson_dumps(data.list_data, option=orjson.OPT_INDENT_2)
+    # def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
+    #
+    #     data: ListModel = value.data
+    #     return orjson_dumps(data.list_data, option=orjson.OPT_INDENT_2)
 
     def serialize(self, data: ListModel) -> SerializedData:
 
@@ -304,12 +304,12 @@ class DictValueType(AnyType[DictModel, DataTypeConfig]):
         if not isinstance(data, DictModel):
             raise Exception(f"Invalid type: {type(data)}.")
 
-    def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
+    # def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
+    #
+    #     data: DictModel = value.data
+    #     return orjson_dumps(data.dict_data, option=orjson.OPT_INDENT_2)
 
-        data: DictModel = value.data
-        return orjson_dumps(data.dict_data, option=orjson.OPT_INDENT_2)
-
-    def pretty_print_as__terminal_renderable(
+    def _pretty_print_as__terminal_renderable(
         self, value: Value, render_config: Mapping[str, Any]
     ):
 
