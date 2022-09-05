@@ -1,12 +1,55 @@
 # -*- coding: utf-8 -*-
 import re
-import typing
+from typing import Any, Dict, Mapping, Optional, Union
 
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.module import KiaraModuleConfig
-from kiara.models.values.value import ValueMap
+from kiara.models.values.value import Value, ValueMap
 from kiara.modules import KiaraModule, ValueMapSchema
+from kiara.modules.included_core_modules.filter import FilterModule
 from pydantic import Field
+
+
+class StringFiltersModule(FilterModule):
+
+    _module_type_name = "string.filters"
+
+    @classmethod
+    def retrieve_supported_type(cls) -> Union[Dict[str, Any], str]:
+
+        return "string"
+
+    def create_filter_inputs(self, filter_name: str) -> Union[None, ValueMapSchema]:
+
+        if filter_name == "tokens":
+            return {
+                "filter_tokens": {
+                    "type": "list",
+                    "doc": "A list of tokens to filter out.",
+                    "optional": True,
+                },
+                "replacement": {
+                    "type": "string",
+                    "doc": "The string to replace the tokens with.",
+                    "default": "",
+                },
+            }
+
+        return None
+
+    def filter__tokens(self, value: Value, filter_inputs: Mapping[str, Any]):
+
+        tokens = filter_inputs.get("filter_tokens", None)
+        if not tokens:
+            return None
+
+        repl = filter_inputs.get("replacement")
+
+        result: str = value.data
+        for token in tokens:
+            result = result.replace(token, repl)  # type: ignore
+
+        return result
 
 
 class RegexModuleConfig(KiaraModuleConfig):
@@ -59,10 +102,10 @@ class RegexModule(KiaraModule):
 
 class ReplaceModuleConfig(KiaraModuleConfig):
 
-    replacement_map: typing.Dict[str, str] = Field(
+    replacement_map: Dict[str, str] = Field(
         description="A map, containing the strings to be replaced as keys, and the replacements as values."
     )
-    default_value: typing.Optional[str] = Field(
+    default_value: Optional[str] = Field(
         description="The default value to use if the string to be replaced is not in the replacement map. By default, this just returns the string itself.",
         default=None,
     )
