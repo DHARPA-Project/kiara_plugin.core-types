@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
-from typing import Any, Dict, Mapping, Optional, Union
+from typing import Any, Dict, Mapping, Union
 
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.module import KiaraModuleConfig
@@ -105,7 +105,7 @@ class ReplaceModuleConfig(KiaraModuleConfig):
     replacement_map: Dict[str, str] = Field(
         description="A map, containing the strings to be replaced as keys, and the replacements as values."
     )
-    default_value: Optional[str] = Field(
+    default_value: Union[str, None] = Field(
         description="The default value to use if the string to be replaced is not in the replacement map. By default, this just returns the string itself.",
         default=None,
     )

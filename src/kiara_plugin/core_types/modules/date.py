@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Union
 
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.values.value import ValueMap
@@ -88,8 +88,8 @@ class DateRangeCheckModule(KiaraModule):
     def process(self, inputs: ValueMap, outputs: ValueMap) -> None:
 
         d: datetime.datetime = inputs.get_value_data("date")
-        earliest: Optional[datetime.datetime] = inputs.get_value_data("earliest")
-        latest: Optional[datetime.datetime] = inputs.get_value_data("latest")
+        earliest: Union[datetime.datetime, None] = inputs.get_value_data("earliest")
+        latest: Union[datetime.datetime, None] = inputs.get_value_data("latest")
 
         if not earliest and not latest:
             outputs.set_value("within_range", True)
