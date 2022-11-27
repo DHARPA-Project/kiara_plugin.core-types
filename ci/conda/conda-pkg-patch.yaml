@@ -16,4 +16,4 @@ test:
     - examples
   commands:
     - kiara module list
-    - kiara data-type explain date
+    - kiara run date.extract_from_string text=2022-02-02
