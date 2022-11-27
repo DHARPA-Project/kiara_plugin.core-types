@@ -4,15 +4,13 @@
 """
 
 import datetime
-import sys
-from typing import Any, Iterable, Mapping, Type
+from typing import Any, Iterable, Mapping, Type, Union
 
 import orjson
 from kiara.data_types import DataTypeCharacteristics, DataTypeConfig
 from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
 from kiara.models.values.value import SerializedData
-from kiara.utils.hashing import compute_cid
 
 from kiara_plugin.core_types.models import ListModel
 
@@ -26,15 +24,9 @@ class IntegerType(AnyType[int, DataTypeConfig]):
     def python_class(cls) -> Type:
         return int
 
-    def serialize(self, data: bool) -> SerializedData:
+    def serialize(self, data: int) -> Union[None, str, "SerializedData"]:
         result = self.serialize_as_json(data)
         return result
-
-    def calculate_hash(cls, data: int) -> int:
-        return data
-
-    def calculate_size(self, data: int) -> int:
-        return sys.getsizeof(data)
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return SCALAR_CHARACTERISTICS
@@ -52,15 +44,9 @@ class FloatType(AnyType[float, DataTypeConfig]):
     def python_class(cls) -> Type:
         return float
 
-    def serialize(self, data: bool) -> SerializedData:
+    def serialize(self, data: float) -> Union[None, str, "SerializedData"]:
         result = self.serialize_as_json(data)
         return result
-
-    def calculate_value_hash(cls, data: float) -> int:
-        return compute_cid(data)
-
-    def calculate_size(self, data: int) -> int:
-        return sys.getsizeof(data)
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return SCALAR_CHARACTERISTICS
@@ -84,15 +70,9 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
     def python_class(cls) -> Type:
         return datetime.datetime
 
-    def serialize(self, data: bool) -> SerializedData:
+    def serialize(self, data: datetime.datetime) -> SerializedData:
         result = self.serialize_as_json(data)
         return result
-
-    def calculate_hash(cls, data: datetime.datetime) -> int:
-        return compute_cid(data)
-
-    def calculate_size(self, data: datetime.datetime) -> int:
-        return sys.getsizeof(data)
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return SCALAR_CHARACTERISTICS
@@ -126,12 +106,6 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
     @classmethod
     def python_class(cls) -> Type:
         return ListModel
-
-    def calculate_size(self, data: ListModel) -> int:
-        return data.size
-
-    def calculate_hash(self, data: ListModel) -> int:
-        return data.value_hash
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return DataTypeCharacteristics(is_scalar=False, is_json_serializable=True)
