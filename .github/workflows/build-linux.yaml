@@ -53,22 +53,22 @@ jobs:
 #        env:
 #          GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}""
 
-#  mypy-linux:
-#    name: mypy check on linux
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        python_version: [3.8, 3.9]
-#    steps:
-#      - name: "Set up Python ${{ matrix.python_version }}"
-#        uses: actions/setup-python@v2
-#        with:
-#          python-version: "${{ matrix.python_version }}"
-#      - uses: actions/checkout@v2
-#      - name: install kiara_plugin.core_types
-#        run: pip install -U --extra-index-url https://pypi.fury.io/dharpa/ .[all,dev_testing]
-#      - name: Test with mypy
-#        run: make mypy
+  mypy-linux:
+    name: mypy check on linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python_version: [3.8, 3.9, 3.10, 3.11]
+    steps:
+      - name: "Set up Python ${{ matrix.python_version }}"
+        uses: actions/setup-python@v2
+        with:
+          python-version: "${{ matrix.python_version }}"
+      - uses: actions/checkout@v2
+      - name: install kiara_plugin.core_types
+        run: pip install -U --extra-index-url https://pypi.fury.io/dharpa/ .[all,dev_testing]
+      - name: Test with mypy
+        run: make mypy
 
 #  flake8-linux:
 #    name: flake8 on linux
