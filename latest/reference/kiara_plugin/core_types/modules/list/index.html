@@ -554,11 +554,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule-methods" class="md-nav__link">
-    Methods
+  <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -709,11 +709,11 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule-methods" class="md-nav__link">
-    Methods
+  <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule-functions" class="md-nav__link">
+    Functions
   </a>
   
-    <nav class="md-nav" aria-label="Methods">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -776,11 +776,11 @@
 
 <div class="doc doc-object doc-module">
 
+
 <a id="kiara_plugin.core_types.modules.list"></a>
-    <div class="doc doc-contents first">
+  <div class="doc doc-contents first">
 
-
-
+  
 
   <div class="doc doc-children">
 
@@ -788,28 +788,66 @@
 
 
 
+
 <h2 id="kiara_plugin.core_types.modules.list-classes">Classes<a href="#kiara_plugin.core_types.modules.list-classes" class="headerlink" title="Permanent link">&para;</a></h2>
 
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h3 id="kiara_plugin.core_types.modules.list.IncludedInListCheckModule" class="doc doc-heading">
-        <code>
-IncludedInListCheckModule            (<a class="autorefs autorefs-external" title="kiara.modules.KiaraModule" href="https://dharpa.org/kiara/latest/reference/kiara/modules/__init__/#kiara.modules.KiaraModule">KiaraModule</a>)
-        </code>
-
+        <code>IncludedInListCheckModule</code>
 
 
 <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule" class="headerlink" title="Permanent link">&para;</a></h3>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-external" title="kiara.modules.KiaraModule" href="https://dharpa.org/kiara/latest/reference/kiara/modules/__init__/#kiara.modules.KiaraModule">KiaraModule</a></code></p>
+
+  
       <p>Check whether an element is in a list.</p>
 
+
         <details class="quote">
-          <summary>Source code in <code>core_types/modules/list.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">IncludedInListCheckModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
+          <summary>Source code in <code>kiara_plugin/core_types/modules/list.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">IncludedInListCheckModule</span><span class="p">(</span><span class="n">KiaraModule</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Check whether an element is in a list.&quot;&quot;&quot;</span>
 
     <span class="n">_module_type_name</span> <span class="o">=</span> <span class="s2">&quot;list.contains&quot;</span>
@@ -845,10 +883,10 @@ IncludedInListCheckModule            (<a class="autorefs autorefs-external" titl
         <span class="n">item</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)</span>
 
         <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;is_included&quot;</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">item_list</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
         </details>
 
-
+  
 
   <div class="doc doc-children">
 
@@ -858,25 +896,34 @@ IncludedInListCheckModule            (<a class="autorefs autorefs-external" titl
 
 
 
-<h4 id="kiara_plugin.core_types.modules.list.IncludedInListCheckModule-methods">Methods<a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule-methods" class="headerlink" title="Permanent link">&para;</a></h4>
+<h4 id="kiara_plugin.core_types.modules.list.IncludedInListCheckModule-functions">Functions<a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule-functions" class="headerlink" title="Permanent link">&para;</a></h4>
 
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h5 id="kiara_plugin.core_types.modules.list.IncludedInListCheckModule.create_inputs_schema" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_inputs_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">kiara</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">ValueSchema</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span></code>
-
+<code class="highlight language-python"><span class="n">create_inputs_schema</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ValueMapSchema</span></code>
 
 <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule.create_inputs_schema" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-      <p>Return the schema for this types' inputs.</p>
+  <div class="doc doc-contents ">
 
-        <details class="quote">
-          <summary>Source code in <code>core_types/modules/list.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_inputs_schema</span><span class="p">(</span>
+      <details class="quote">
+        <summary>Source code in <code>kiara_plugin/core_types/modules/list.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">create_inputs_schema</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValueMapSchema</span><span class="p">:</span>
 
@@ -888,31 +935,37 @@ IncludedInListCheckModule            (<a class="autorefs autorefs-external" titl
         <span class="p">},</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">inputs</span>
-</code></pre></div>
-        </details>
-    </div>
-
+</code></pre></div></td></tr></table></div>
+      </details>
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h5 id="kiara_plugin.core_types.modules.list.IncludedInListCheckModule.create_outputs_schema" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_outputs_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">kiara</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">value_schema</span><span class="o">.</span><span class="n">ValueSchema</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span></code>
-
+<code class="highlight language-python"><span class="n">create_outputs_schema</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ValueMapSchema</span></code>
 
 <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule.create_outputs_schema" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-      <p>Return the schema for this types' outputs.</p>
+  <div class="doc doc-contents ">
 
-        <details class="quote">
-          <summary>Source code in <code>core_types/modules/list.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_outputs_schema</span><span class="p">(</span>
+      <details class="quote">
+        <summary>Source code in <code>kiara_plugin/core_types/modules/list.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">create_outputs_schema</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValueMapSchema</span><span class="p">:</span>
 
@@ -923,62 +976,59 @@ IncludedInListCheckModule            (<a class="autorefs autorefs-external" titl
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">outputs</span>
-</code></pre></div>
-        </details>
-    </div>
-
+</code></pre></div></td></tr></table></div>
+      </details>
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-function">
 
 
 
 <h5 id="kiara_plugin.core_types.modules.list.IncludedInListCheckModule.process" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
-
+<code class="highlight language-python"><span class="n">process</span><span class="p">(</span><span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
 
 <a href="#kiara_plugin.core_types.modules.list.IncludedInListCheckModule.process" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
 
-        <details class="quote">
-          <summary>Source code in <code>core_types/modules/list.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+      <details class="quote">
+        <summary>Source code in <code>kiara_plugin/core_types/modules/list.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">ValueMap</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
     <span class="n">item_list</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;list&quot;</span><span class="p">)</span>
     <span class="n">item</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">get_value_data</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)</span>
 
     <span class="n">outputs</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;is_included&quot;</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">item_list</span><span class="p">)</span>
-</code></pre></div>
-        </details>
-    </div>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
 
   </div>
 
-
-
-
-
   </div>
 
-    </div>
-
-  </div>
-
-
-
+</div>
 
 
 
 
   </div>
 
-    </div>
-
   </div>
+
+</div>
 
 
 

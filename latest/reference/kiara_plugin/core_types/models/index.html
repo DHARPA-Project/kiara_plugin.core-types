@@ -534,10 +534,36 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.models.ListModel-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.models.ListModel.Config" class="md-nav__link">
     Config
   </a>
+  
+    <nav class="md-nav" aria-label="Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.models.ListModel.Config-attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -798,10 +824,36 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.models.ListModel-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#kiara_plugin.core_types.models.ListModel.Config" class="md-nav__link">
     Config
   </a>
+  
+    <nav class="md-nav" aria-label="Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.models.ListModel.Config-attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -844,16 +896,17 @@
 
 <div class="doc doc-object doc-module">
 
-<a id="kiara_plugin.core_types.models"></a>
-    <div class="doc doc-contents first">
 
+<a id="kiara_plugin.core_types.models"></a>
+  <div class="doc doc-contents first">
+  
       <p>This module contains the metadata (and other) models that are used in the <code>kiara_plugin.core_types</code> package.</p>
 <p>Those models are convenience wrappers that make it easier for <em>kiara</em> to find, create, manage and version metadata -- but also
 other type of models -- that is attached to data, as well as <em>kiara</em> modules.</p>
 <p>Metadata models must be a sub-class of [kiara.metadata.MetadataModel][]. Other models usually
 sub-class a pydantic BaseModel or implement custom base classes.</p>
 
-
+  
 
   <div class="doc doc-children">
 
@@ -861,31 +914,91 @@ sub-class a pydantic BaseModel or implement custom base classes.</p>
 
 
 
+
 <h2 id="kiara_plugin.core_types.models-classes">Classes<a href="#kiara_plugin.core_types.models-classes" class="headerlink" title="Permanent link">&para;</a></h2>
 
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h3 id="kiara_plugin.core_types.models.ListModel" class="doc doc-heading">
-        <code>
-ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>, <span title="collections.abc.Sequence">Sequence</span>, <span title="typing.Generic">Generic</span>)
-        </code>
+        <code>ListModel</code>
 
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
-  </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel" class="headerlink" title="Permanent link">&para;</a></h3>
 
-    <div class="doc doc-contents ">
 
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code>, <code><span title="typing.Sequence">Sequence</span></code></p>
+
+  
       <p>A list implentation that contains (optional) schema information of the lists items.</p>
 
+
         <details class="quote">
-          <summary>Source code in <code>core_types/models.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ListModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
+          <summary>Source code in <code>kiara_plugin/core_types/models.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ListModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A list implentation that contains (optional) schema information of the lists items.&quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
@@ -946,200 +1059,179 @@ ListModel            (<span title="pydantic.main.BaseModel">BaseModel</span>, <s
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_data</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
         </details>
 
-
+  
 
   <div class="doc doc-children">
+
 
 
 
 
 <h4 id="kiara_plugin.core_types.models.ListModel-attributes">Attributes<a href="#kiara_plugin.core_types.models.ListModel-attributes" class="headerlink" title="Permanent link">&para;</a></h4>
 
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.list_data" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">list_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-      <small class="doc doc-property doc-property-required"><code>required</code></small>
+<code class="highlight language-python"><span class="n">list_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;The data.&#39;</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.list_data" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-      <p>The data.</p>
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.item_schema" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">item_schema</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-      <small class="doc doc-property doc-property-required"><code>required</code></small>
+<code class="highlight language-python"><span class="n">item_schema</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;The schema.&#39;</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.item_schema" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-      <p>The schema.</p>
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.python_class" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">python_class</span><span class="p">:</span> <span class="n">PythonClass</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-      <small class="doc doc-property doc-property-required"><code>required</code></small>
+<code class="highlight language-python"><span class="n">python_class</span><span class="p">:</span> <span class="n">PythonClass</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;The python class of which model instances are created. This is mostly meant as a hint for client applications.&#39;</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.python_class" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-      <p>The python class of which model instances are created. This is mostly meant as a hint for client applications.</p>
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.size" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">size</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.size" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.data_hash" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">data_hash</span><span class="p">:</span> <span class="nb">int</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.data_hash" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.schema_hash" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">schema_hash</span><span class="p">:</span> <span class="nb">int</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.schema_hash" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.value_hash" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">value_hash</span><span class="p">:</span> <span class="nb">int</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.value_hash" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
 
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
+<h4 id="kiara_plugin.core_types.models.ListModel-classes">Classes<a href="#kiara_plugin.core_types.models.ListModel-classes" class="headerlink" title="Permanent link">&para;</a></h4>
 
-
-
-  <div class="doc doc-object doc-class">
+<div class="doc doc-object doc-class">
 
 
 
 <h5 id="kiara_plugin.core_types.models.ListModel.Config" class="doc doc-heading">
-        <code>
-Config        </code>
-
+        <code>Config</code>
 
 
 <a href="#kiara_plugin.core_types.models.ListModel.Config" class="headerlink" title="Permanent link">&para;</a></h5>
 
-    <div class="doc doc-contents ">
+
+  <div class="doc doc-contents ">
+
 
 
         <details class="quote">
-          <summary>Source code in <code>core_types/models.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+          <summary>Source code in <code>kiara_plugin/core_types/models.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
     <span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span>
     <span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
         </details>
 
-
+  
 
   <div class="doc doc-children">
 
@@ -1147,61 +1239,45 @@ Config        </code>
 
 
 
+<h6 id="kiara_plugin.core_types.models.ListModel.Config-attributes">Attributes<a href="#kiara_plugin.core_types.models.ListModel.Config-attributes" class="headerlink" title="Permanent link">&para;</a></h6>
 
-  <div class="doc doc-object doc-attribute">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h7 id="kiara_plugin.core_types.models.ListModel.Config.json_loads" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">json_loads</span></code>
-
+<code class="highlight language-python"><span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.Config.json_loads" class="headerlink" title="Permanent link">&para;</a></h7>
 
-    <div class="doc doc-contents ">
 
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
 
+</div>
 
-
-
-
-
-  <div class="doc doc-object doc-method">
+<div class="doc doc-object doc-attribute">
 
 
 
 <h7 id="kiara_plugin.core_types.models.ListModel.Config.json_dumps" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">json_dumps</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span></code>
-
+<code class="highlight language-python"><span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
 
 <a href="#kiara_plugin.core_types.models.ListModel.Config.json_dumps" class="headerlink" title="Permanent link">&para;</a></h7>
 
-    <div class="doc doc-contents ">
 
-
-        <details class="quote">
-          <summary>Source code in <code>core_types/models.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">orjson_dumps</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
-    <span class="c1"># orjson.dumps returns bytes, to match standard json.dumps we need to decode</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">orjson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">is_debug</span><span class="p">():</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error dumping json data: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="kn">from</span> <span class="nn">kiara</span> <span class="kn">import</span> <span class="n">dbg</span>
-
-            <span class="n">dbg</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-
-        <span class="k">raise</span> <span class="n">e</span>
-</code></pre></div>
-        </details>
-    </div>
-
+  <div class="doc doc-contents ">
   </div>
+
+</div>
 
 
 
@@ -1209,33 +1285,27 @@ Config        </code>
 
   </div>
 
-    </div>
-
   </div>
 
-
-
+</div>
 
 
 
 
   </div>
 
-    </div>
-
   </div>
 
-
-
+</div>
 
 
 
 
   </div>
 
-    </div>
-
   </div>
+
+</div>
 
 
 
