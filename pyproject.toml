@@ -51,6 +51,22 @@ dev_all = [
     "kiara[dev_all]"
 ]
 
+[project.entry-points."kiara.plugin"]
+core_types = "kiara_plugin.core_types"
+
+[project.entry-points."kiara.data_types"]
+core_types = "kiara_plugin.core_types:find_data_types"
+
+[project.entry-points."kiara.model_classes"]
+core_types = "kiara_plugin.core_types:find_model_classes"
+
+[project.entry-points."kiara.modules"]
+core_types = "kiara_plugin.core_types:find_modules"
+
+[project.entry-points."kiara.pipelines"]
+core_types = "kiara_plugin.core_types:find_pipelines"
+
+
 [project.urls]
 homepage = "https://github.com/DHARPA-Project/kiara_plugin.core_types"
 documentation = "https://DHARPA-Project.github.io/kiara_plugin.core_types"

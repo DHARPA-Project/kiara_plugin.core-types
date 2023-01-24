@@ -51,6 +51,7 @@ plugins:
             - "^_config_cls"
         import:
         - https://dharpa.org/kiara/latest/objects.inv
+
     watch:
       - "src"
     enable_inventory: true
