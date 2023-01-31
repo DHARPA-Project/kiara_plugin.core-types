@@ -66,6 +66,8 @@ core_types = "kiara_plugin.core_types:find_modules"
 [project.entry-points."kiara.pipelines"]
 core_types = "kiara_plugin.core_types:find_pipelines"
 
+[project.entry-points."kiara.renderers"]
+html = "kiara_plugin.core_types:find_renderer_classes"
 
 [project.urls]
 homepage = "https://github.com/DHARPA-Project/kiara_plugin.core_types"
