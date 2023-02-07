@@ -12,10 +12,11 @@ sub-class a pydantic BaseModel or implement custom base classes.
 from typing import Any, Dict, List, Sequence
 
 import orjson
+from pydantic import BaseModel, Field, PrivateAttr
+
 from kiara.models.python_class import PythonClass
 from kiara.utils.hashing import compute_cid
 from kiara.utils.json import orjson_dumps
-from pydantic import BaseModel, Field, PrivateAttr
 
 
 class ListModel(BaseModel, Sequence):

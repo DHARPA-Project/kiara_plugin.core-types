@@ -3,6 +3,8 @@ import uuid
 from typing import Any, Dict, Iterable, Type, Union
 
 import orjson
+from pydantic import Field, root_validator
+
 from kiara import Kiara, Value
 from kiara.exceptions import KiaraException
 from kiara.models.values.lineage import ValueLineage
@@ -14,7 +16,6 @@ from kiara.renderers import (
 )
 from kiara.utils.json import orjson_dumps
 from kiara.utils.yaml import StringYAML
-from pydantic import Field, root_validator
 
 
 class LineageDataInputs(RenderInputsSchema):

@@ -2,10 +2,11 @@
 from typing import Any, Dict, List, Mapping, Type, TypeVar, Union
 
 import structlog
-from kiara import KiaraModule, KiaraModuleConfig, ValueMap, ValueSchema
-from kiara.utils.values import create_schema_dict, overlay_constants_and_defaults
 from pydantic import Field
 from pydantic.fields import SHAPE_DICT, SHAPE_LIST, ModelField
+
+from kiara import KiaraModule, KiaraModuleConfig, ValueMap, ValueSchema
+from kiara.utils.values import create_schema_dict, overlay_constants_and_defaults
 
 log = structlog.getLogger()
 

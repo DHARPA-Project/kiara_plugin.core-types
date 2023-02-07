@@ -7,11 +7,11 @@ import datetime
 from typing import Any, Iterable, Mapping, Type, Union
 
 import orjson
+
 from kiara.data_types import DataTypeCharacteristics, DataTypeConfig
 from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
 from kiara.models.values.value import SerializedData
-
 from kiara_plugin.core_types.models import ListModel
 
 

@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import time
 
+from pydantic import Field
+
 from kiara.models.module import KiaraModuleConfig
 from kiara.models.values.value import ValueMap
 from kiara.modules import KiaraModule, ValueMapSchema
-from pydantic import Field
 
 
 class LogicProcessingModuleConfig(KiaraModuleConfig):

@@ -2,12 +2,13 @@
 import re
 from typing import Any, Dict, Mapping, Union
 
+from pydantic import Field
+
 from kiara.exceptions import KiaraProcessingException
 from kiara.models.module import KiaraModuleConfig
 from kiara.models.values.value import Value, ValueMap
 from kiara.modules import KiaraModule, ValueMapSchema
 from kiara.modules.included_core_modules.filter import FilterModule
-from pydantic import Field
 
 
 class StringFiltersModule(FilterModule):
