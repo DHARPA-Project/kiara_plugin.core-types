@@ -12,7 +12,7 @@ from kiara.data_types import DataTypeCharacteristics, DataTypeConfig
 from kiara.data_types.included_core_types import SCALAR_CHARACTERISTICS, AnyType
 from kiara.models.python_class import PythonClass
 from kiara.models.values.value import SerializedData
-from kiara_plugin.core_types.models import ListModel
+from kiara_plugin.core_types.models import KiaraList
 
 
 class IntegerType(AnyType[int, DataTypeConfig]):
@@ -94,7 +94,7 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
         assert isinstance(value, datetime.datetime)
 
 
-class ListValueType(AnyType[ListModel, DataTypeConfig]):
+class ListValueType(AnyType[KiaraList, DataTypeConfig]):
     """A list.
 
     Backed by the [kiara_plugin.core_types.models.ListModel] class, this data type allows to (optionally) specify
@@ -105,19 +105,19 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
 
     @classmethod
     def python_class(cls) -> Type:
-        return ListModel
+        return KiaraList
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return DataTypeCharacteristics(is_scalar=False, is_json_serializable=True)
 
-    def parse_python_obj(self, data: Any) -> ListModel:
+    def parse_python_obj(self, data: Any) -> KiaraList:
 
         python_cls = data.__class__
         _data = None
         _schema = None
 
         if isinstance(data, Mapping) and "list_data" in data.keys():
-            list_model = ListModel(**data)
+            list_model = KiaraList(**data)
             return list_model
 
         if isinstance(data, Iterable):
@@ -143,12 +143,12 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
             "python_class": PythonClass.from_class(python_cls).dict(),
         }
 
-        result_model = ListModel(**result)
+        result_model = KiaraList(**result)
         return result_model
 
-    def _validate(self, data: ListModel) -> None:
+    def _validate(self, data: KiaraList) -> None:
 
-        if not isinstance(data, ListModel):
+        if not isinstance(data, KiaraList):
             raise Exception(f"Invalid type: {type(data)}.")
 
     # def render_as__string(self, value: Value, render_config: Mapping[str, Any]) -> str:
@@ -156,7 +156,7 @@ class ListValueType(AnyType[ListModel, DataTypeConfig]):
     #     data: ListModel = value.data
     #     return orjson_dumps(data.list_data, option=orjson.OPT_INDENT_2)
 
-    def serialize(self, data: ListModel) -> SerializedData:
+    def serialize(self, data: KiaraList) -> SerializedData:
 
         result = self.serialize_as_json(data.dict())
         return result

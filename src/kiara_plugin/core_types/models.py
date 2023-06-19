@@ -19,7 +19,7 @@ from kiara.utils.hashing import compute_cid
 from kiara.utils.json import orjson_dumps
 
 
-class ListModel(BaseModel, Sequence):
+class KiaraList(BaseModel, Sequence):
     """A list implentation that contains (optional) schema information of the lists items."""
 
     class Config:
