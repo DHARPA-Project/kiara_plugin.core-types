@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../module_types/">
+        <link rel="prev" href="../kiara_model_types/">
       
       
         <link rel="next" href="../../reference/kiara_plugin/core_types/__init__/">
@@ -301,6 +301,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../kiara_model_types/" class="md-nav__link">
+        kiara_model_types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -342,6 +356,20 @@
         <li class="md-nav__item">
   <a href="#kiara_info.operations.date.extract_from_string" class="md-nav__link">
     date.extract_from_string
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kiara_info.operations.deserialize.kiara_model.as.python_object" class="md-nav__link">
+    deserialize.kiara_model.as.python_object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kiara_info.operations.deserialize.kiara_model_list.as.python_object" class="md-nav__link">
+    deserialize.kiara_model_list.as.python_object
   </a>
   
 </li>
@@ -825,6 +853,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#kiara_info.operations.deserialize.kiara_model.as.python_object" class="md-nav__link">
+    deserialize.kiara_model.as.python_object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kiara_info.operations.deserialize.kiara_model_list.as.python_object" class="md-nav__link">
+    deserialize.kiara_model_list.as.python_object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kiara_info.operations.list.contains" class="md-nav__link">
     list.contains
   </a>
@@ -1033,6 +1075,146 @@
 <td>date</td>
 <td>date</td>
 <td>The date extracted from the input string.</td>
+<td>yes</td>
+<td></td>
+    </tr>
+
+    </tbody>
+</table>
+</td>
+    </tr>
+</table><h3 id="kiara_info.operations.deserialize.kiara_model.as.python_object"><code>deserialize.kiara_model.as.python_object</code><a class="headerlink" href="#kiara_info.operations.deserialize.kiara_model.as.python_object" title="Permanent link">&para;</a></h3>
+
+
+<table>
+    <tr>
+        <td>Documentation</td>
+        <td><p>-- n/a --</p>
+</td>
+    </tr>
+    <tr>
+        <td>Inputs</td>
+        <td>
+<table>
+    <thead>
+    <tr>
+        <th>field name</th>
+        <th>type</th>
+        <th>description</th>
+        <th>required</th>
+        <th>default</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+<td>kiara_model</td>
+<td>kiara_model</td>
+<td>The value object.</td>
+<td>yes</td>
+<td></td>
+    </tr>
+
+<td>deserialization_config</td>
+<td>any</td>
+<td>Serialization-format specific configuration.</td>
+<td>no</td>
+<td></td>
+    </tr>
+
+    </tbody>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td>Outputs</td>
+        <td>
+<table>
+    <thead>
+    <tr>
+        <th>field name</th>
+        <th>type</th>
+        <th>description</th>
+        <th>required</th>
+        <th>default</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+<td>python_object</td>
+<td>python_object</td>
+<td>The deserialized python object instance.</td>
+<td>yes</td>
+<td></td>
+    </tr>
+
+    </tbody>
+</table>
+</td>
+    </tr>
+</table><h3 id="kiara_info.operations.deserialize.kiara_model_list.as.python_object"><code>deserialize.kiara_model_list.as.python_object</code><a class="headerlink" href="#kiara_info.operations.deserialize.kiara_model_list.as.python_object" title="Permanent link">&para;</a></h3>
+
+
+<table>
+    <tr>
+        <td>Documentation</td>
+        <td><p>-- n/a --</p>
+</td>
+    </tr>
+    <tr>
+        <td>Inputs</td>
+        <td>
+<table>
+    <thead>
+    <tr>
+        <th>field name</th>
+        <th>type</th>
+        <th>description</th>
+        <th>required</th>
+        <th>default</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+<td>kiara_model_list</td>
+<td>kiara_model_list</td>
+<td>The value object.</td>
+<td>yes</td>
+<td></td>
+    </tr>
+
+<td>deserialization_config</td>
+<td>any</td>
+<td>Serialization-format specific configuration.</td>
+<td>no</td>
+<td></td>
+    </tr>
+
+    </tbody>
+</table>
+</td>
+    </tr>
+    <tr>
+        <td>Outputs</td>
+        <td>
+<table>
+    <thead>
+    <tr>
+        <th>field name</th>
+        <th>type</th>
+        <th>description</th>
+        <th>required</th>
+        <th>default</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+<td>python_object</td>
+<td>python_object</td>
+<td>The deserialized python object instance.</td>
 <td>yes</td>
 <td></td>
     </tr>

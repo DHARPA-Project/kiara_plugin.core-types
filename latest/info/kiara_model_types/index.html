@@ -11,19 +11,21 @@
       
       
       
+        <link rel="prev" href="../module_types/">
       
-        <link rel="next" href="usage/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../operations/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
-        <title>kiara_plugin.core_types</title>
+        <title>kiara_model_types - kiara_plugin.core_types</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -39,11 +41,11 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kiara-plugin-core-types" class="md-skip">
+        <a href="#kiara_info.kiara_model_types.kiara_model_schema_metadata" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +87,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="kiara_plugin.core_types" class="md-header__button md-logo" aria-label="kiara_plugin.core_types" data-md-component="logo">
+    <a href="../.." title="kiara_plugin.core_types" class="md-header__button md-logo" aria-label="kiara_plugin.core_types" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              kiara_model_types
             
           </span>
         </div>
@@ -183,7 +185,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="kiara_plugin.core_types" class="md-nav__button md-logo" aria-label="kiara_plugin.core_types" data-md-component="logo">
+    <a href="../.." title="kiara_plugin.core_types" class="md-nav__button md-logo" aria-label="kiara_plugin.core_types" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -212,100 +214,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#package-content" class="md-nav__link">
-    Package content
-  </a>
-  
-    <nav class="md-nav" aria-label="Package content">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data_types" class="md-nav__link">
-    data_types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module_types" class="md-nav__link">
-    module_types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kiara_model_types" class="md-nav__link">
-    kiara_model_types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    operations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
-    Links
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -318,7 +231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="usage/" class="md-nav__link">
+      <a href="../../usage/" class="md-nav__link">
         Usage
       </a>
     </li>
@@ -331,14 +244,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -347,7 +262,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Package contents
@@ -360,7 +275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="info/data_types/" class="md-nav__link">
+      <a href="../data_types/" class="md-nav__link">
         data_types
       </a>
     </li>
@@ -374,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="info/module_types/" class="md-nav__link">
+      <a href="../module_types/" class="md-nav__link">
         module_types
       </a>
     </li>
@@ -386,11 +301,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="info/kiara_model_types/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          kiara_model_types
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         kiara_model_types
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kiara_info.kiara_model_types.kiara_model_schema_metadata" class="md-nav__link">
+    kiara_model_schema_metadata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kiara_info.kiara_model_types.kiara_model_list_metadata" class="md-nav__link">
+    kiara_model_list_metadata
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -402,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="info/operations/" class="md-nav__link">
+      <a href="../operations/" class="md-nav__link">
         operations
       </a>
     </li>
@@ -490,7 +449,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="reference/kiara_plugin/core_types/__init__/">core_types</a>
+          <a href="../../reference/kiara_plugin/core_types/__init__/">core_types</a>
           
             <label for="__nav_4_1_1">
               <span class="md-nav__icon md-icon"></span>
@@ -523,7 +482,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="reference/kiara_plugin/core_types/data_types/__init__/">data_types</a>
+          <a href="../../reference/kiara_plugin/core_types/data_types/__init__/">data_types</a>
           
             <label for="__nav_4_1_1_1">
               <span class="md-nav__icon md-icon"></span>
@@ -544,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/data_types/models/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/data_types/models/" class="md-nav__link">
         models
       </a>
     </li>
@@ -565,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/defaults/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/defaults/" class="md-nav__link">
         defaults
       </a>
     </li>
@@ -579,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/models/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/models/" class="md-nav__link">
         models
       </a>
     </li>
@@ -605,7 +564,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="reference/kiara_plugin/core_types/modules/__init__/">modules</a>
+          <a href="../../reference/kiara_plugin/core_types/modules/__init__/">modules</a>
           
             <label for="__nav_4_1_1_4">
               <span class="md-nav__icon md-icon"></span>
@@ -626,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/modules/boolean/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/modules/boolean/" class="md-nav__link">
         boolean
       </a>
     </li>
@@ -640,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/modules/date/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/modules/date/" class="md-nav__link">
         date
       </a>
     </li>
@@ -654,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/modules/list/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/modules/list/" class="md-nav__link">
         list
       </a>
     </li>
@@ -668,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/modules/models/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/modules/models/" class="md-nav__link">
         models
       </a>
     </li>
@@ -682,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/modules/string/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/modules/string/" class="md-nav__link">
         string
       </a>
     </li>
@@ -703,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/pipelines/__init__/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/pipelines/__init__/" class="md-nav__link">
         pipelines
       </a>
     </li>
@@ -729,7 +688,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="reference/kiara_plugin/core_types/renderers/__init__/">renderers</a>
+          <a href="../../reference/kiara_plugin/core_types/renderers/__init__/">renderers</a>
           
             <label for="__nav_4_1_1_6">
               <span class="md-nav__icon md-icon"></span>
@@ -750,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/kiara_plugin/core_types/renderers/lineage/" class="md-nav__link">
+      <a href="../../reference/kiara_plugin/core_types/renderers/lineage/" class="md-nav__link">
         lineage
       </a>
     </li>
@@ -802,8 +761,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -812,56 +769,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
+  <a href="#kiara_info.kiara_model_types.kiara_model_schema_metadata" class="md-nav__link">
+    kiara_model_schema_metadata
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-content" class="md-nav__link">
-    Package content
-  </a>
-  
-    <nav class="md-nav" aria-label="Package content">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data_types" class="md-nav__link">
-    data_types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#module_types" class="md-nav__link">
-    module_types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#kiara_model_types" class="md-nav__link">
-    kiara_model_types
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    operations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
-    Links
+  <a href="#kiara_info.kiara_model_types.kiara_model_list_metadata" class="md-nav__link">
+    kiara_model_list_metadata
   </a>
   
 </li>
@@ -880,125 +796,55 @@
                 
                   
 
-  
-  
 
+  <h1>kiara_model_types</h1>
 
-<h1 id="kiara-plugin-core-types"><a href="https://dharpa.org/kiara.documentation"><strong>kiara</strong></a> plugin: core-types<a class="headerlink" href="#kiara-plugin-core-types" title="Permanent link">&para;</a></h1>
-<p>This package contains a set of commonly used/useful modules, pipelines, types and metadata schemas for <a href="https://github.com/DHARPA-project/kiara"><em>Kiara</em></a>.</p>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Core data types for kiara.</p>
-<h2 id="package-content">Package content<a class="headerlink" href="#package-content" title="Permanent link">&para;</a></h2>
-<h3 id="data_types">data_types<a class="headerlink" href="#data_types" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/data_types/#kiara_info.data_types.integer"><code>integer</code></a>: An integer.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/data_types/#kiara_info.data_types.float"><code>float</code></a>: A float.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/data_types/#kiara_info.data_types.date"><code>date</code></a>: A date.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/data_types/#kiara_info.data_types.list"><code>list</code></a>: A list.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/data_types/#kiara_info.data_types.kiara_model"><code>kiara_model</code></a>: A model.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/data_types/#kiara_info.data_types.kiara_model_list"><code>kiara_model_list</code></a>: A model.</p>
-</li>
-</ul>
-<h3 id="module_types">module_types<a class="headerlink" href="#module_types" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.string.filters"><code>string.filters</code></a>: -- n/a --</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.load.kiara_model"><code>load.kiara_model</code></a>: -- n/a --</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.load.kiara_model_list"><code>load.kiara_model_list</code></a>: -- n/a --</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.logic.not"><code>logic.not</code></a>: Negates the input.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.logic.and"><code>logic.and</code></a>: Returns 'True' if both inputs are 'True'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.logic.or"><code>logic.or</code></a>: Returns 'True' if one of the inputs is 'True'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.date.extract_from_string"><code>date.extract_from_string</code></a>: Extract a date object from a string.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.date.check_range"><code>date.check_range</code></a>: Check whether a date falls within a specified date range.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.list.contains"><code>list.contains</code></a>: Check whether an element is in a list.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.string.match_regex"><code>string.match_regex</code></a>: Match a string using a regular expression.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/module_types/#kiara_info.module_types.string.replace"><code>string.replace</code></a>: Replace a string if it matches a key in a mapping dictionary.</p>
-</li>
-</ul>
-<h3 id="kiara_model_types">kiara_model_types<a class="headerlink" href="#kiara_model_types" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/kiara_model_types/#kiara_info.kiara_model_types.kiara_model_schema_metadata"><code>kiara_model_schema_metadata</code></a>: File stats.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/kiara_model_types/#kiara_info.kiara_model_types.kiara_model_list_metadata"><code>kiara_model_list_metadata</code></a>: File stats.</p>
-</li>
-</ul>
-<h3 id="operations">operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.date.check_range"><code>date.check_range</code></a>: Check whether a date falls within a specified date range.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.date.extract_from_string"><code>date.extract_from_string</code></a>: Extract a date object from a string.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.deserialize.kiara_model.as.python_object"><code>deserialize.kiara_model.as.python_object</code></a>: -- n/a --</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.deserialize.kiara_model_list.as.python_object"><code>deserialize.kiara_model_list.as.python_object</code></a>: -- n/a --</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.list.contains"><code>list.contains</code></a>: Check whether an element is in a list.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.logic.and"><code>logic.and</code></a>: Returns 'True' if both inputs are 'True'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.logic.nand"><code>logic.nand</code></a>: Returns 'False' if both inputs are 'True'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.logic.nor"><code>logic.nor</code></a>: Returns 'True' if both inputs are 'False'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.logic.not"><code>logic.not</code></a>: Negates the input.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.logic.or"><code>logic.or</code></a>: Returns 'True' if one of the inputs is 'True'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.logic.xor"><code>logic.xor</code></a>: Returns 'True' if exactly one of it's two inputs is 'True'.</p>
-</li>
-<li>
-<p><a class="autorefs autorefs-internal" href="info/operations/#kiara_info.operations.string_filter.tokens"><code>string_filter.tokens</code></a>: -- n/a --</p>
-</li>
-</ul>
-<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Documentation: <a href="https://DHARPA-Project.github.io/kiara_plugin.core_types">https://DHARPA-Project.github.io/kiara_plugin.core_types</a></li>
-<li>Code: <a href="https://github.com/DHARPA-Project/kiara_plugin.core_types">https://github.com/DHARPA-Project/kiara_plugin.core_types</a></li>
-</ul>
+<h3 id="kiara_info.kiara_model_types.kiara_model_schema_metadata"><code>kiara_model_schema_metadata</code><a class="headerlink" href="#kiara_info.kiara_model_types.kiara_model_schema_metadata" title="Permanent link">&para;</a></h3>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">                                                                                
+ <span style="font-style: italic">Documentation</span>                                                                  
+ <span style="font-style: italic">             </span>   File stats.                                                    
+ <span style="font-style: italic">             </span>                                                                  
+ <span style="font-style: italic">Author(s)    </span>                                                                  
+ <span style="font-style: italic">             </span>   Markus Binsteiner  <span style="font-style: italic"> markus@frkl.io </span>                            
+ <span style="font-style: italic">             </span>                                                                  
+ <span style="font-style: italic">Context      </span>                                                                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> Tags       </span>  core_types                                        
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> Labels     </span>  <span style="font-style: italic">package</span>: kiara_plugin.core_types                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> References </span>  <span style="font-style: italic">source_repo</span>:                                      
+ <span style="font-style: italic">             </span>  <span style="font-style: italic">            </span>  <a href="https://github.com/DHARPA-Project/kiara_plugin.core_types" target="_blank">https://github.com/DHARPA-Project/kiara_plugin…</a>   
+ <span style="font-style: italic">             </span>  <span style="font-style: italic">            </span>  <span style="font-style: italic">documentation</span>:                                    
+ <span style="font-style: italic">             </span>  <span style="font-style: italic">            </span>  <a href="https://DHARPA-Project.github.io/kiara_plugin.core_types/" target="_blank">https://DHARPA-Project.github.io/kiara_plugin.…</a>   
+ <span style="font-style: italic">             </span>                                                                  
+ <span style="font-style: italic">Python class </span>                                                                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> python_class_name  </span>  KiaraModelSchemaMetadata                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> python_module_name </span>  kiara_plugin.core_types.models            
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> full_name          </span>  kiara_plugin.core_types.models.KiaraMo…   
+ <span style="font-style: italic">             </span>                                                                  
+                                                                                
+</pre>
+<h3 id="kiara_info.kiara_model_types.kiara_model_list_metadata"><code>kiara_model_list_metadata</code><a class="headerlink" href="#kiara_info.kiara_model_types.kiara_model_list_metadata" title="Permanent link">&para;</a></h3>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">                                                                                
+ <span style="font-style: italic">Documentation</span>                                                                  
+ <span style="font-style: italic">             </span>   File stats.                                                    
+ <span style="font-style: italic">             </span>                                                                  
+ <span style="font-style: italic">Author(s)    </span>                                                                  
+ <span style="font-style: italic">             </span>   Markus Binsteiner  <span style="font-style: italic"> markus@frkl.io </span>                            
+ <span style="font-style: italic">             </span>                                                                  
+ <span style="font-style: italic">Context      </span>                                                                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> Tags       </span>  core_types                                        
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> Labels     </span>  <span style="font-style: italic">package</span>: kiara_plugin.core_types                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> References </span>  <span style="font-style: italic">source_repo</span>:                                      
+ <span style="font-style: italic">             </span>  <span style="font-style: italic">            </span>  <a href="https://github.com/DHARPA-Project/kiara_plugin.core_types" target="_blank">https://github.com/DHARPA-Project/kiara_plugin…</a>   
+ <span style="font-style: italic">             </span>  <span style="font-style: italic">            </span>  <span style="font-style: italic">documentation</span>:                                    
+ <span style="font-style: italic">             </span>  <span style="font-style: italic">            </span>  <a href="https://DHARPA-Project.github.io/kiara_plugin.core_types/" target="_blank">https://DHARPA-Project.github.io/kiara_plugin.…</a>   
+ <span style="font-style: italic">             </span>                                                                  
+ <span style="font-style: italic">Python class </span>                                                                  
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> python_class_name  </span>  KiaraModelListMetadata                    
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> python_module_name </span>  kiara_plugin.core_types.models            
+ <span style="font-style: italic">             </span>  <span style="font-style: italic"> full_name          </span>  kiara_plugin.core_types.models.KiaraMo…   
+ <span style="font-style: italic">             </span>                                                                  
+                                                                                
+</pre>
 
 
 
@@ -1036,10 +882,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.a51614de.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
   </body>

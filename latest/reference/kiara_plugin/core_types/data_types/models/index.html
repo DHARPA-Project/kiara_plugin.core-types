@@ -301,6 +301,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../info/kiara_model_types/" class="md-nav__link">
+        kiara_model_types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../info/operations/" class="md-nav__link">
         operations
       </a>
@@ -643,6 +657,39 @@
   <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.list_items" class="md-nav__link">
     list_items
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config" class="md-nav__link">
+    Config
+  </a>
+  
+    <nav class="md-nav" aria-label="Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config-attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1159,6 +1206,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList-classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config" class="md-nav__link">
+    Config
+  </a>
+  
+    <nav class="md-nav" aria-label="Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config-attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1326,11 +1406,15 @@
 
         <details class="quote">
           <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelTypeConfig</span><span class="p">(</span><span class="n">DataTypeConfig</span><span class="p">):</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelTypeConfig</span><span class="p">(</span><span class="n">DataTypeConfig</span><span class="p">):</span>
 
-    <span class="n">kiara_model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;The ID of a registered kiara model.&quot;</span><span class="p">)</span>
+    <span class="n">kiara_model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The ID of a registered kiara model.&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;instance.dummy&quot;</span>
+    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1349,7 +1433,7 @@
 
 
 <h5 id="kiara_plugin.core_types.data_types.models.KiaraModelTypeConfig.kiara_model_id" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">kiara_model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;The ID of a registered kiara model.&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">kiara_model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;The ID of a registered kiara model.&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;instance.dummy&#39;</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
@@ -1395,10 +1479,7 @@
 
         <details class="quote">
           <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 34</span>
 <span class="normal"> 35</span>
 <span class="normal"> 36</span>
 <span class="normal"> 37</span>
@@ -1497,7 +1578,10 @@
 <span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
-<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelType</span><span class="p">(</span><span class="n">AnyType</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">,</span> <span class="n">KiaraModelTypeConfig</span><span class="p">]):</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelType</span><span class="p">(</span><span class="n">AnyType</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">,</span> <span class="n">KiaraModelTypeConfig</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A model.&quot;&quot;&quot;</span>
 
     <span class="n">_data_type_name</span> <span class="o">=</span> <span class="s2">&quot;kiara_model&quot;</span>
@@ -1536,9 +1620,9 @@
                 <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="p">{},</span>
                 <span class="s2">&quot;deserialize&quot;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="s2">&quot;python_object&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.internal_model&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.kiara_model&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;module_config&quot;</span><span class="p">:</span> <span class="p">{</span>
-                            <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;internal_model&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;kiara_model&quot;</span><span class="p">,</span>
                             <span class="s2">&quot;target_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;python_object&quot;</span><span class="p">,</span>
                             <span class="s2">&quot;serialization_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
                         <span class="p">},</span>
@@ -1635,10 +1719,10 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">data_type_config_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">KiaraModelTypeConfig</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The Python class that holds the (optional) configuration for a data type instance.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">KiaraModelTypeConfig</span>  <span class="c1"># type: ignore</span>
@@ -1662,10 +1746,7 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
@@ -1703,7 +1784,10 @@
 <span class="normal">80</span>
 <span class="normal">81</span>
 <span class="normal">82</span>
-<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">KiaraModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SerializedData</span><span class="p">]:</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">KiaraModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SerializedData</span><span class="p">]:</span>
 
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_config</span><span class="o">.</span><span class="n">kiara_model_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
@@ -1731,9 +1815,9 @@
             <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="p">{},</span>
             <span class="s2">&quot;deserialize&quot;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="s2">&quot;python_object&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.internal_model&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.kiara_model&quot;</span><span class="p">,</span>
                     <span class="s2">&quot;module_config&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;internal_model&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;kiara_model&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;target_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;python_object&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;serialization_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
                     <span class="p">},</span>
@@ -1769,9 +1853,9 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">]:</span>
     <span class="k">return</span> <span class="n">KiaraModel</span>
 </code></pre></div></td></tr></table></div>
@@ -1798,10 +1882,7 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 92</span>
 <span class="normal"> 93</span>
 <span class="normal"> 94</span>
 <span class="normal"> 95</span>
@@ -1810,7 +1891,10 @@
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
 <span class="normal">100</span>
-<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">get_model_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">]:</span>
 
     <span class="n">model_type_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_config</span><span class="o">.</span><span class="n">kiara_model_id</span>
@@ -1843,10 +1927,7 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
 <span class="normal">107</span>
 <span class="normal">108</span>
 <span class="normal">109</span>
@@ -1857,7 +1938,10 @@
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
-<span class="normal">117</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parse_python_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KiaraModel</span><span class="p">:</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parse_python_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KiaraModel</span><span class="p">:</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">KiaraModel</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">data</span>
@@ -1905,11 +1989,21 @@
 
         <details class="quote">
           <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelList</span><span class="p">(</span><span class="n">GenericModel</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">KIARA_MODEL</span><span class="p">]):</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelList</span><span class="p">(</span><span class="n">GenericModel</span><span class="p">,</span> <span class="n">Generic</span><span class="p">[</span><span class="n">KIARA_MODEL</span><span class="p">]):</span>
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span>
+        <span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span>
+        <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">forbid</span>
+
     <span class="n">kiara_model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;The ID of a registered kiara model.&quot;</span><span class="p">)</span>
     <span class="n">list_items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">KIARA_MODEL</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
         <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The model instances in the list.&quot;</span>
@@ -1966,7 +2060,116 @@
   </div>
 
 </div>
+<h4 id="kiara_plugin.core_types.data_types.models.KiaraModelList-classes">Classes<a href="#kiara_plugin.core_types.data_types.models.KiaraModelList-classes" class="headerlink" title="Permanent link">&para;</a></h4>
 
+<div class="doc doc-object doc-class">
+
+
+
+<h5 id="kiara_plugin.core_types.data_types.models.KiaraModelList.Config" class="doc doc-heading">
+        <code>Config</code>
+
+
+<a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config" class="headerlink" title="Permanent link">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>object</code></p>
+
+
+
+        <details class="quote">
+          <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span>
+    <span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span>
+    <span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">forbid</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+<h6 id="kiara_plugin.core_types.data_types.models.KiaraModelList.Config-attributes">Attributes<a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config-attributes" class="headerlink" title="Permanent link">&para;</a></h6>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="kiara_plugin.core_types.data_types.models.KiaraModelList.Config.json_loads" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">json_loads</span> <span class="o">=</span> <span class="n">orjson</span><span class="o">.</span><span class="n">loads</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+<a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config.json_loads" class="headerlink" title="Permanent link">&para;</a></h7>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="kiara_plugin.core_types.data_types.models.KiaraModelList.Config.json_dumps" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">json_dumps</span> <span class="o">=</span> <span class="n">orjson_dumps</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+<a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config.json_dumps" class="headerlink" title="Permanent link">&para;</a></h7>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h7 id="kiara_plugin.core_types.data_types.models.KiaraModelList.Config.extra" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extra</span> <span class="o">=</span> <span class="n">Extra</span><span class="o">.</span><span class="n">forbid</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+<a href="#kiara_plugin.core_types.data_types.models.KiaraModelList.Config.extra" class="headerlink" title="Permanent link">&para;</a></h7>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
 
 
 
@@ -1998,15 +2201,7 @@
 
         <details class="quote">
           <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
@@ -2114,7 +2309,25 @@
 <span class="normal">259</span>
 <span class="normal">260</span>
 <span class="normal">261</span>
-<span class="normal">262</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelListType</span><span class="p">(</span><span class="n">AnyType</span><span class="p">[</span><span class="n">KiaraModelList</span><span class="p">,</span> <span class="n">KiaraModelTypeConfig</span><span class="p">]):</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">KiaraModelListType</span><span class="p">(</span><span class="n">AnyType</span><span class="p">[</span><span class="n">KiaraModelList</span><span class="p">,</span> <span class="n">KiaraModelTypeConfig</span><span class="p">]):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A model.&quot;&quot;&quot;</span>
 
     <span class="n">_data_type_name</span> <span class="o">=</span> <span class="s2">&quot;kiara_model_list&quot;</span>
@@ -2143,6 +2356,14 @@
             <span class="p">},</span>
         <span class="p">}</span>
 
+        <span class="n">_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">list_items</span><span class="p">):</span>
+            <span class="n">_data</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;item_</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;inline-json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;inline_data&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
+                <span class="s2">&quot;codec&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+
         <span class="n">serialized_data</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type_name</span><span class="p">,</span>
             <span class="s2">&quot;data_type_config&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_config</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
@@ -2152,9 +2373,9 @@
                 <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="p">{},</span>
                 <span class="s2">&quot;deserialize&quot;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="s2">&quot;python_object&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.internal_model&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.kiara_model_list&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;module_config&quot;</span><span class="p">:</span> <span class="p">{</span>
-                            <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;internal_model&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;kiara_model_list&quot;</span><span class="p">,</span>
                             <span class="s2">&quot;target_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;python_object&quot;</span><span class="p">,</span>
                             <span class="s2">&quot;serialization_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
                         <span class="p">},</span>
@@ -2187,7 +2408,9 @@
 
     <span class="k">def</span> <span class="nf">parse_python_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KiaraModelList</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">]:</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">KiaraModelList</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
             <span class="c1"># raise KiaraException(msg=f&quot;Can&#39;t instantiate model of type &#39;{self.type_config.kiara_model_id}&#39; with data of type &#39;{type(data)}&#39;: expected list.&quot;)</span>
 
@@ -2266,10 +2489,10 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">data_type_config_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">KiaraModelTypeConfig</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The Python class that holds the (optional) configuration for a data type instance.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">KiaraModelTypeConfig</span>  <span class="c1"># type: ignore</span>
@@ -2293,15 +2516,7 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
 <span class="normal">167</span>
@@ -2334,7 +2549,23 @@
 <span class="normal">194</span>
 <span class="normal">195</span>
 <span class="normal">196</span>
-<span class="normal">197</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">KiaraModelList</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SerializedData</span><span class="p">]:</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">KiaraModelList</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SerializedData</span><span class="p">]:</span>
 
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_config</span><span class="o">.</span><span class="n">kiara_model_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
@@ -2353,6 +2584,14 @@
         <span class="p">},</span>
     <span class="p">}</span>
 
+    <span class="n">_data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">list_items</span><span class="p">):</span>
+        <span class="n">_data</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;item_</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;inline-json&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;inline_data&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
+            <span class="s2">&quot;codec&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+
     <span class="n">serialized_data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type_name</span><span class="p">,</span>
         <span class="s2">&quot;data_type_config&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_config</span><span class="o">.</span><span class="n">dict</span><span class="p">(),</span>
@@ -2362,9 +2601,9 @@
             <span class="s2">&quot;environment&quot;</span><span class="p">:</span> <span class="p">{},</span>
             <span class="s2">&quot;deserialize&quot;</span><span class="p">:</span> <span class="p">{</span>
                 <span class="s2">&quot;python_object&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.internal_model&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;module_type&quot;</span><span class="p">:</span> <span class="s2">&quot;load.kiara_model_list&quot;</span><span class="p">,</span>
                     <span class="s2">&quot;module_config&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;internal_model&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;value_type&quot;</span><span class="p">:</span> <span class="s2">&quot;kiara_model_list&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;target_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;python_object&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;serialization_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
                     <span class="p">},</span>
@@ -2400,9 +2639,9 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">python_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">KiaraModelList</span><span class="p">]:</span>
     <span class="k">return</span> <span class="n">KiaraModelList</span>
 </code></pre></div></td></tr></table></div>
@@ -2429,19 +2668,19 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">get_model_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">]:</span>
 
     <span class="n">model_type_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_config</span><span class="o">.</span><span class="n">kiara_model_id</span>
@@ -2474,23 +2713,7 @@
 
       <details class="quote">
         <summary>Source code in <code>/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/kiara_plugin/core_types/data_types/models.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">233</span>
 <span class="normal">234</span>
 <span class="normal">235</span>
 <span class="normal">236</span>
@@ -2500,9 +2723,29 @@
 <span class="normal">240</span>
 <span class="normal">241</span>
 <span class="normal">242</span>
-<span class="normal">243</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parse_python_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KiaraModelList</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">]:</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parse_python_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KiaraModelList</span><span class="p">[</span><span class="n">KiaraModel</span><span class="p">]:</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">KiaraModelList</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
         <span class="c1"># raise KiaraException(msg=f&quot;Can&#39;t instantiate model of type &#39;{self.type_config.kiara_model_id}&#39; with data of type &#39;{type(data)}&#39;: expected list.&quot;)</span>
 
