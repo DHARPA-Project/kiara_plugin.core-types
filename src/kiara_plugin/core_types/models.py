@@ -9,14 +9,21 @@ Metadata models must be a sub-class of [kiara.metadata.MetadataModel][kiara.meta
 sub-class a pydantic BaseModel or implement custom base classes.
 """
 
-from typing import Any, Dict, List, Sequence
+from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Sequence
 
 import orjson
 from pydantic import BaseModel, Field, PrivateAttr
 
+from kiara.exceptions import KiaraException
 from kiara.models.python_class import PythonClass
+from kiara.models.values.value_metadata import ValueMetadata
+from kiara.registries.models import ModelRegistry
 from kiara.utils.hashing import compute_cid
 from kiara.utils.json import orjson_dumps
+
+if TYPE_CHECKING:
+    from kiara.api import Value
+    from kiara_plugin.core_types.data_types.models import KiaraModelList
 
 
 class KiaraList(BaseModel, Sequence):
@@ -80,3 +87,57 @@ class KiaraList(BaseModel, Sequence):
 
     def __len__(self):
         return self.list_data.__len__()
+
+
+class KiaraModelSchemaMetadata(ValueMetadata):
+    """File stats."""
+
+    _metadata_key = "kiara_model_schema"
+
+    @classmethod
+    def retrieve_supported_data_types(cls) -> Iterable[str]:
+        return ["kiara_model", "kiara_model_list"]
+
+    @classmethod
+    def create_value_metadata(cls, value: "Value") -> "KiaraModelSchemaMetadata":
+
+        kiara_model_id = value.data_type_config.get("kiara_model_id", None)
+        if not kiara_model_id:
+            raise KiaraException(
+                "No kiara model id found in data type config. This is a bug."
+            )
+
+        model_cls = ModelRegistry.instance().get_model_cls(kiara_model_id)
+
+        md = KiaraModelSchemaMetadata(
+            kiara_model_id=kiara_model_id, model_schema=model_cls.schema_json()
+        )
+        return md
+
+    kiara_model_id: str = Field(
+        description="The id of the kiara model that is contained in this list."
+    )
+    model_schema: str = Field(description="The (JSON) schema of the model.")
+
+
+class KiaraModelListMetadata(ValueMetadata):
+    """File stats."""
+
+    _metadata_key = "kiara_model_list"
+
+    @classmethod
+    def retrieve_supported_data_types(cls) -> Iterable[str]:
+        return ["kiara_model_list"]
+
+    @classmethod
+    def create_value_metadata(cls, value: "Value") -> "KiaraModelListMetadata":
+
+        model_list: "KiaraModelList" = value.data
+        length = len(model_list.list_items)
+
+        md = KiaraModelListMetadata(length=length)
+        return md
+
+    length: int = Field(
+        description="The number of model instances that are contained in this list."
+    )
