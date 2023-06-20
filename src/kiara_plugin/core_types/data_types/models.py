@@ -121,9 +121,9 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
         if not isinstance(value, KiaraModel):
             raise Exception(f"Invalid type: {type(value)}.")
 
-        if value._kiara_model_id != self.type_config.kiara_model_id:
+        if value._kiara_model_id != self.type_config.kiara_model_id:  # type: ignore
             raise Exception(
-                f"Invalid model type '{value._kiara_model_id}': expected '{self.type_config.kiara_model_id}'."
+                f"Invalid model type '{value._kiara_model_id}': expected '{self.type_config.kiara_model_id}'."  # type: ignore
             )
 
     def _pretty_print_as__terminal_renderable(
@@ -214,7 +214,7 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
 
         return model_cls
 
-    def parse_python_obj(self, data: Any) -> KiaraModelList:
+    def parse_python_obj(self, data: Any) -> KiaraModelList[KiaraModel]:
 
         if not isinstance(data, list):
             data = [data]
@@ -237,7 +237,7 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
                         msg=f"Can't instantiate model of type '{self.type_config.kiara_model_id}' with data of type '{type(item)}': {e}"
                     )
 
-        instance = KiaraModelList[self.get_model_cls()].construct(  # type: ignore
+        instance: KiaraModelList[KiaraModel] = KiaraModelList[self.get_model_cls()].construct(  # type: ignore
             list_items=result, kiara_model_id=self.type_config.kiara_model_id
         )
         return instance
@@ -250,9 +250,9 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
         for item in value.list_items:
             if not isinstance(item, KiaraModel):
                 raise Exception(f"Invalid type: {type(item)}.")
-            if item._kiara_model_id != self.type_config.kiara_model_id:
+            if item._kiara_model_id != self.type_config.kiara_model_id:  # type: ignore
                 raise Exception(
-                    f"Invalid model type '{item._kiara_model_id}': expected '{self.type_config.kiara_model_id}'."
+                    f"Invalid model type '{item._kiara_model_id}': expected '{self.type_config.kiara_model_id}'."  # type: ignore
                 )
 
     def _pretty_print_as__terminal_renderable(
