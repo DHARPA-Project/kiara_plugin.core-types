@@ -68,7 +68,7 @@ class LoadKiaraModelList(DeserializeValueModule):
 
         items = []
 
-        for chunk_id in sorted(data.chunk_id_map.keys()):
+        for chunk_id in sorted(data.get_keys()):
             chunks = data.get_serialized_data(chunk_id)
             assert chunks.get_number_of_chunks() == 1
 
