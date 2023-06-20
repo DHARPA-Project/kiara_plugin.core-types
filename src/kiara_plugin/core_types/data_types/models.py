@@ -7,7 +7,7 @@ from typing import Any, Generic, List, Mapping, Type, TypeVar, Union
 
 import orjson
 import structlog
-from pydantic import Field
+from pydantic import Extra, Field
 from pydantic.generics import GenericModel
 from rich.syntax import Syntax
 
@@ -18,6 +18,7 @@ from kiara.exceptions import KiaraException
 from kiara.models import KiaraModel
 from kiara.models.values.value import SerializedData, Value
 from kiara.registries.models import ModelRegistry
+from kiara.utils.json import orjson_dumps
 from kiara_plugin.core_types.defaults import DEFAULT_MODEL_KEY
 
 logger = structlog.getLogger()
@@ -67,9 +68,9 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
                 "environment": {},
                 "deserialize": {
                     "python_object": {
-                        "module_type": "load.internal_model",
+                        "module_type": "load.kiara_model",
                         "module_config": {
-                            "value_type": "internal_model",
+                            "value_type": "kiara_model",
                             "target_profile": "python_object",
                             "serialization_profile": "json",
                         },
@@ -137,6 +138,11 @@ KIARA_MODEL = TypeVar("KIARA_MODEL")
 
 
 class KiaraModelList(GenericModel, Generic[KIARA_MODEL]):
+    class Config(object):
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+        extra = Extra.forbid
+
     kiara_model_id: str = Field(description="The ID of a registered kiara model.")
     list_items: List[KIARA_MODEL] = Field(
         description="The model instances in the list."
@@ -172,6 +178,14 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
             },
         }
 
+        _data = {}
+        for idx, x in enumerate(data.list_items):
+            _data[f"item_{idx}"] = {
+                "type": "inline-json",
+                "inline_data": x.dict(),
+                "codec": "json",
+            }
+
         serialized_data = {
             "data_type": self.data_type_name,
             "data_type_config": self.type_config.dict(),
@@ -181,9 +195,9 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
                 "environment": {},
                 "deserialize": {
                     "python_object": {
-                        "module_type": "load.internal_model",
+                        "module_type": "load.kiara_model_list",
                         "module_config": {
-                            "value_type": "internal_model",
+                            "value_type": "kiara_model_list",
                             "target_profile": "python_object",
                             "serialization_profile": "json",
                         },
@@ -216,7 +230,9 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
 
     def parse_python_obj(self, data: Any) -> KiaraModelList[KiaraModel]:
 
-        if not isinstance(data, list):
+        if isinstance(data, KiaraModelList):
+            return data
+        elif not isinstance(data, list):
             data = [data]
             # raise KiaraException(msg=f"Can't instantiate model of type '{self.type_config.kiara_model_id}' with data of type '{type(data)}': expected list.")
 
