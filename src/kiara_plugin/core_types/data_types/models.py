@@ -27,7 +27,8 @@ logger = structlog.getLogger()
 class KiaraModelTypeConfig(DataTypeConfig):
 
     kiara_model_id: str = Field(
-        description="The ID of a registered kiara model.", default="instance.dummy"
+        description="The ID of a registered kiara model.",
+        default="you.must.specify.your.own.here",
     )
 
 
