@@ -413,9 +413,63 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1_1" >
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../data_types/__init__/">data_types</a>
+          
+            <label for="__nav_4_1_1_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_1_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          data_types
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../data_types/" class="md-nav__link">
-        data_types
+      <a href="../../data_types/models/" class="md-nav__link">
+        models
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/" class="md-nav__link">
+        defaults
       </a>
     </li>
   
@@ -447,7 +501,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1_4" >
       
       
       
@@ -456,14 +510,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../modules/__init__/">modules</a>
           
-            <label for="__nav_4_1_1_3">
+            <label for="__nav_4_1_1_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_1_1_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_1_1_3">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_1_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1_1_4">
           <span class="md-nav__icon md-icon"></span>
           modules
         </label>
@@ -505,6 +559,20 @@
     <li class="md-nav__item">
       <a href="../../modules/list/" class="md-nav__link">
         list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/models/" class="md-nav__link">
+        models
       </a>
     </li>
   
@@ -559,7 +627,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1_6" checked>
       
       
       
@@ -568,14 +636,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../__init__/">renderers</a>
           
-            <label for="__nav_4_1_1_5">
+            <label for="__nav_4_1_1_6">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_1_1_5_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_4_1_1_5">
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_1_1_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_1_1_6">
           <span class="md-nav__icon md-icon"></span>
           renderers
         </label>
@@ -1200,8 +1268,8 @@
 <code class="highlight language-python"><span class="n">render_style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;The style to use for rendering the lineage graph.&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.renderers.lineage.LineageDataInputs.render_style" class="headerlink" title="Permanent link">&para;</a></h5>
@@ -1220,8 +1288,8 @@
 <code class="highlight language-python"><span class="n">config</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Additional, optional configuration for the renderer.&#39;</span><span class="p">,</span> <span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
       <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
   </span>
 
 <a href="#kiara_plugin.core_types.renderers.lineage.LineageDataInputs.config" class="headerlink" title="Permanent link">&para;</a></h5>
