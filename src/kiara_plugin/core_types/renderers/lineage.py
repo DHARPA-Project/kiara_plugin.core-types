@@ -3,7 +3,7 @@ import uuid
 from typing import Any, Dict, Iterable, Type, Union
 
 import orjson
-from pydantic import Field, root_validator
+from pydantic import Field, model_validator
 
 from kiara.api import Kiara, Value
 from kiara.exceptions import KiaraException
@@ -29,7 +29,8 @@ class LineageDataInputs(RenderInputsSchema):
         default_factory=dict,
     )
 
-    @root_validator(pre=True)
+    @model_validator(mode="before")
+    @classmethod
     def validate_linage_inputs(cls, values):
 
         result = {}

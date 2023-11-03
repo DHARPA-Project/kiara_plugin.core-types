@@ -4,7 +4,7 @@
 """
 
 import datetime
-from typing import Any, Iterable, Mapping, Type, Union
+from typing import Any, ClassVar, Iterable, Mapping, Type, Union
 
 import orjson
 
@@ -18,7 +18,7 @@ from kiara_plugin.core_types.models import KiaraList
 class IntegerType(AnyType[int, DataTypeConfig]):
     """An integer."""
 
-    _data_type_name = "integer"
+    _data_type_name: ClassVar[str] = "integer"
 
     @classmethod
     def python_class(cls) -> Type:
@@ -38,7 +38,7 @@ class IntegerType(AnyType[int, DataTypeConfig]):
 class FloatType(AnyType[float, DataTypeConfig]):
     "A float."
 
-    _data_type_name = "float"
+    _data_type_name: ClassVar[str] = "float"
 
     @classmethod
     def python_class(cls) -> Type:
@@ -64,7 +64,7 @@ class DateType(AnyType[datetime.datetime, DataTypeConfig]):
     be as string, in which case the [``dateutils.parser.parse``](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.parse) method will be used to parse the string into a datetime object.
     """
 
-    _data_type_name = "date"
+    _data_type_name: ClassVar[str] = "date"
 
     @classmethod
     def python_class(cls) -> Type:
@@ -101,7 +101,7 @@ class ListValueType(AnyType[KiaraList, DataTypeConfig]):
     a schema for the items in the list.
     """
 
-    _data_type_name = "list"
+    _data_type_name: ClassVar[str] = "list"
 
     @classmethod
     def python_class(cls) -> Type:

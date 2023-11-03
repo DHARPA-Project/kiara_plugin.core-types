@@ -3,12 +3,11 @@
 """This module contains the value type classes that are used in the ``kiara_plugin.core_types`` package.
 """
 from functools import lru_cache
-from typing import Any, Generic, List, Mapping, Type, TypeVar, Union
+from typing import Any, ClassVar, Generic, List, Mapping, Type, TypeVar, Union
 
 import orjson
 import structlog
-from pydantic import Extra, Field
-from pydantic.generics import GenericModel
+from pydantic import BaseModel, ConfigDict, Extra, Field
 from rich.syntax import Syntax
 
 from kiara.data_types import DataTypeConfig
@@ -18,7 +17,6 @@ from kiara.exceptions import KiaraException
 from kiara.models import KiaraModel
 from kiara.models.values.value import SerializedData, Value
 from kiara.registries.models import ModelRegistry
-from kiara.utils.json import orjson_dumps
 from kiara_plugin.core_types.defaults import DEFAULT_MODEL_KEY
 
 logger = structlog.getLogger()
@@ -35,7 +33,7 @@ class KiaraModelTypeConfig(DataTypeConfig):
 class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
     """A model."""
 
-    _data_type_name = "kiara_model"
+    _data_type_name: ClassVar = "kiara_model"
     # _cls_cache: Union[Type[KiaraModel], None] = PrivateAttr(default=None)
 
     @classmethod
@@ -140,11 +138,9 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
 KIARA_MODEL = TypeVar("KIARA_MODEL")
 
 
-class KiaraModelList(GenericModel, Generic[KIARA_MODEL]):
-    class Config(object):
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
-        extra = Extra.forbid
+class KiaraModelList(BaseModel, Generic[KIARA_MODEL]):
+
+    model_config = ConfigDict(extra=Extra.forbid)
 
     kiara_model_id: str = Field(description="The ID of a registered kiara model.")
     list_items: List[KIARA_MODEL] = Field(
@@ -155,7 +151,7 @@ class KiaraModelList(GenericModel, Generic[KIARA_MODEL]):
 class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
     """A model."""
 
-    _data_type_name = "kiara_model_list"
+    _data_type_name: ClassVar = "kiara_model_list"
 
     @classmethod
     def data_type_config_class(cls) -> Type[KiaraModelTypeConfig]:

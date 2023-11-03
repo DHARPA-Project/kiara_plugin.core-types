@@ -3,7 +3,6 @@ from typing import Any, Dict, List, Mapping, Type, TypeVar, Union
 
 import structlog
 from pydantic import Field
-from pydantic.fields import SHAPE_DICT, SHAPE_LIST, ModelField
 
 from kiara.api import KiaraModule, KiaraModuleConfig, ValueMap, ValueSchema
 from kiara.utils.values import create_schema_dict, overlay_constants_and_defaults
@@ -31,8 +30,9 @@ class KiaraInputsConfig(KiaraModuleConfig):
             return inputs_schema
 
         result: Dict[str, Any] = dict(inputs_schema)
-        field: ModelField
-        for field_name, field in self.__fields__.items():
+        # TODO: pydantic refactor
+
+        for field_name, field in self.model_fields.items():
 
             if self.input_fields and field_name not in self.input_fields:
                 continue
@@ -52,32 +52,35 @@ class KiaraInputsConfig(KiaraModuleConfig):
 
             kiara_type: Union[None, str] = None
 
-            if field.shape == SHAPE_LIST:
-                kiara_type = "list"
-            elif field.shape == SHAPE_DICT:
-                kiara_type = "dict"
-            elif field.type_ == str:
-                kiara_type = "string"
-            elif field.type_ == bool:
+            if field.annotation == bool:
                 kiara_type = "boolean"
-            elif field.type_ == int:
+            elif field.annotation == Union[None, int]:
                 kiara_type = "integer"
-            elif field.type_ == float:
-                kiara_type = "float"
-            elif issubclass(field.type_, Mapping):
-                kiara_type = "dict"
-            elif issubclass(field.type_, List):
+            elif field.annotation == List[str]:
                 kiara_type = "list"
-
-            if kiara_type is None:
+            else:
                 raise Exception(
-                    f"Can't auto-generate inputs schema, type '{field.type_}' for field '{field_name}' not supported."
+                    f"Can't auto-generate inputs schema, type '{field.annotation}' for field '{field_name}' not supported."
                 )
+            # elif field.shape == SHAPE_LIST:
+            #     kiara_type = "list"
+            # elif field.shape == SHAPE_DICT:
+            #     kiara_type = "dict"
+            # elif field.type_ == str:
+            #     kiara_type = "string"
+            # elif field.type_ == int:
+            #     kiara_type = "integer"
+            # elif field.type_ == float:
+            #     kiara_type = "float"
+            # elif issubclass(field.type_, Mapping):
+            #     kiara_type = "dict"
+            # elif issubclass(field.type_, List):
+            #     kiara_type = "list"
 
             result[field_name] = {
                 "type": kiara_type,
-                "doc": field.field_info.description,
-                "optional": not field.required,
+                "doc": field.description,
+                "optional": not field.is_required(),
             }
             if field.default:
                 result[field_name]["default"] = field.default

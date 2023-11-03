@@ -9,9 +9,8 @@ Metadata models must be a sub-class of [kiara.metadata.MetadataModel][kiara.meta
 sub-class a pydantic BaseModel or implement custom base classes.
 """
 
-from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Sequence
+from typing import TYPE_CHECKING, Any, ClassVar, Dict, Iterable, List, Sequence
 
-import orjson
 from pydantic import BaseModel, Field, PrivateAttr
 
 from kiara.exceptions import KiaraException
@@ -19,7 +18,6 @@ from kiara.models.python_class import PythonClass
 from kiara.models.values.value_metadata import ValueMetadata
 from kiara.registries.models import ModelRegistry
 from kiara.utils.hashing import compute_cid
-from kiara.utils.json import orjson_dumps
 
 if TYPE_CHECKING:
     from kiara.api import Value
@@ -28,10 +26,6 @@ if TYPE_CHECKING:
 
 class KiaraList(BaseModel, Sequence):
     """A list implentation that contains (optional) schema information of the lists items."""
-
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
 
     list_data: List[Any] = Field(description="The data.")
     item_schema: Dict[str, Any] = Field(description="The schema.")
@@ -92,7 +86,7 @@ class KiaraList(BaseModel, Sequence):
 class KiaraModelSchemaMetadata(ValueMetadata):
     """File stats."""
 
-    _metadata_key = "kiara_model_schema"
+    _metadata_key: ClassVar[str] = "kiara_model_schema"
 
     @classmethod
     def retrieve_supported_data_types(cls) -> Iterable[str]:
@@ -110,20 +104,20 @@ class KiaraModelSchemaMetadata(ValueMetadata):
         model_cls = ModelRegistry.instance().get_model_cls(kiara_model_id)
 
         md = KiaraModelSchemaMetadata(
-            kiara_model_id=kiara_model_id, model_schema=model_cls.schema_json()
+            kiara_model_id=kiara_model_id, kiara_model_schema=model_cls.schema_json()
         )
         return md
 
     kiara_model_id: str = Field(
         description="The id of the kiara model that is contained in this list."
     )
-    model_schema: str = Field(description="The (JSON) schema of the model.")
+    kiara_model_schema: str = Field(description="The (JSON) schema of the model.")
 
 
 class KiaraModelListMetadata(ValueMetadata):
     """File stats."""
 
-    _metadata_key = "kiara_model_list"
+    _metadata_key: ClassVar[str] = "kiara_model_list"
 
     @classmethod
     def retrieve_supported_data_types(cls) -> Iterable[str]:
