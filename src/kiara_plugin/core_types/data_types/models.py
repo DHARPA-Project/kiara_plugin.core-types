@@ -5,9 +5,8 @@
 from functools import lru_cache
 from typing import Any, ClassVar, Generic, List, Mapping, Type, TypeVar, Union
 
-import orjson
 import structlog
-from pydantic import BaseModel, ConfigDict, Extra, Field
+from pydantic import BaseModel, ConfigDict, Field
 from rich.syntax import Syntax
 
 from kiara.data_types import DataTypeConfig
