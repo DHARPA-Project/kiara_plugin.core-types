@@ -55,14 +55,14 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
         _data = {
             "data": {
                 "type": "inline-json",
-                "inline_data": data.dict(),
+                "inline_data": data.model_dump(),
                 "codec": "json",
             },
         }
 
         serialized_data = {
             "data_type": self.data_type_name,
-            "data_type_config": self.type_config.dict(),
+            "data_type_config": self.type_config.model_dump(),
             "data": _data,
             "serialization_profile": "json",
             "metadata": {
@@ -131,16 +131,16 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
     def _pretty_print_as__terminal_renderable(
         self, value: "Value", render_config: Mapping[str, Any]
     ):
-        json_str = value.data.json(option=orjson.OPT_INDENT_2)
+        json_str = value.data.model_dump_json(indent=2)
         return Syntax(json_str, "json", background_color="default")
 
 
-KIARA_MODEL = TypeVar("KIARA_MODEL")
+KIARA_MODEL = TypeVar("KIARA_MODEL", bound=KiaraModel)
 
 
 class KiaraModelList(BaseModel, Generic[KIARA_MODEL]):
 
-    model_config = ConfigDict(extra=Extra.forbid)
+    model_config = ConfigDict(extra="forbid")
 
     kiara_model_id: str = Field(description="The ID of a registered kiara model.")
     list_items: List[KIARA_MODEL] = Field(
@@ -172,7 +172,7 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
         _data = {
             "data": {
                 "type": "inline-json",
-                "inline_data": [x.dict() for x in data.list_items],  # type: ignore
+                "inline_data": [x.model_dump() for x in data.list_items],
                 "codec": "json",
             },
         }
@@ -181,13 +181,13 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
         for idx, x in enumerate(data.list_items):
             _data[f"item_{idx}"] = {
                 "type": "inline-json",
-                "inline_data": x.dict(),
+                "inline_data": x.model_dump(),
                 "codec": "json",
             }
 
         serialized_data = {
             "data_type": self.data_type_name,
-            "data_type_config": self.type_config.dict(),
+            "data_type_config": self.type_config.model_dump(),
             "data": _data,
             "serialization_profile": "json",
             "metadata": {
@@ -273,5 +273,5 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
     def _pretty_print_as__terminal_renderable(
         self, value: "Value", render_config: Mapping[str, Any]
     ):
-        json_str = value.data.json(option=orjson.OPT_INDENT_2)
+        json_str = value.data.model_dump_json(indent=2)
         return Syntax(json_str, "json", background_color="default")

@@ -140,7 +140,7 @@ class ListValueType(AnyType[KiaraList, DataTypeConfig]):
         result = {
             "list_data": _data,
             "item_schema": _schema,
-            "python_class": PythonClass.from_class(python_cls).dict(),
+            "python_class": PythonClass.from_class(python_cls).model_dump(),
         }
 
         result_model = KiaraList(**result)
@@ -158,5 +158,5 @@ class ListValueType(AnyType[KiaraList, DataTypeConfig]):
 
     def serialize(self, data: KiaraList) -> SerializedData:
 
-        result = self.serialize_as_json(data.dict())
+        result = self.serialize_as_json(data.model_dump())
         return result
