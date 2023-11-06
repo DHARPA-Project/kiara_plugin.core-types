@@ -63,4 +63,9 @@ onefile.spec
 *_complete.zsh.zwc
 ci/conda/**/build
 ci/conda/kiara_plugin.core_types/meta.yaml
+<<<<<<< ours
 ci/conda/kiara_plugin.core_types/build_*
+=======
+.pixi
+dev.py
+>>>>>>> theirs
