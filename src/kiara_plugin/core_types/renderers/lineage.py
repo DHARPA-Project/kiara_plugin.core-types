@@ -108,7 +108,7 @@ class LineageRendererData(
             )
 
         func = getattr(self, func_name)
-        result = func(lineage=instance, **render_config.config)
+        result: str = func(lineage=instance, **render_config.config)
 
         return result
 
@@ -120,7 +120,8 @@ class LineageRendererData(
         """
 
         data = lineage.as_dict(**config)
-        return orjson_dumps(data, option=orjson.OPT_INDENT_2)
+        result: str = orjson_dumps(data, option=orjson.OPT_INDENT_2)
+        return result
 
     def render__yaml(self, lineage: ValueLineage, **config) -> str:
         """Renders a html tree view using ul/li elements in a recursive helper function.
@@ -133,5 +134,5 @@ class LineageRendererData(
         data = lineage.as_dict(**config)
         # we need to make sure there are no objects left...
         data = orjson.loads(orjson_dumps(data))
-        result = yaml.dump(data)
+        result: str = yaml.dump(data)
         return result
