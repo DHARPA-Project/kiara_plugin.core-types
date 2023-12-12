@@ -85,7 +85,8 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
 
     @classmethod
     def python_class(cls) -> Type[KiaraModel]:
-        return KiaraModel
+        result: Type[KiaraModel] = KiaraModel  # make mypy happy
+        return result
 
     @lru_cache(maxsize=1)
     def get_model_cls(self) -> Type[KiaraModel]:
@@ -95,7 +96,7 @@ class KiaraModelType(AnyType[KiaraModel, KiaraModelTypeConfig]):
 
         model_registry = ModelRegistry.instance()
 
-        model_cls = model_registry.get_model_cls(
+        model_cls: Type[KiaraModel] = model_registry.get_model_cls(
             model_type_id, required_subclass=KiaraModel
         )
 
@@ -220,7 +221,7 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
 
         model_registry = ModelRegistry.instance()
 
-        model_cls = model_registry.get_model_cls(
+        model_cls: Type[KiaraModel] = model_registry.get_model_cls(
             model_type_id, required_subclass=KiaraModel
         )
 
@@ -251,7 +252,7 @@ class KiaraModelListType(AnyType[KiaraModelList, KiaraModelTypeConfig]):
                         msg=f"Can't instantiate model of type '{self.type_config.kiara_model_id}' with data of type '{type(item)}': {e}"
                     )
 
-        instance: KiaraModelList[KiaraModel] = KiaraModelList[self.get_model_cls()].construct(  # type: ignore
+        instance: KiaraModelList[KiaraModel] = KiaraModelList[self.get_model_cls()](  # type: ignore
             list_items=result, kiara_model_id=self.type_config.kiara_model_id
         )
         return instance

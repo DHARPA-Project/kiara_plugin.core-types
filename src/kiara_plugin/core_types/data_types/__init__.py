@@ -105,7 +105,8 @@ class ListValueType(AnyType[KiaraList, DataTypeConfig]):
 
     @classmethod
     def python_class(cls) -> Type:
-        return KiaraList
+        result: Type[KiaraList] = KiaraList  # make mypy happy
+        return result
 
     def _retrieve_characteristics(self) -> DataTypeCharacteristics:
         return DataTypeCharacteristics(is_scalar=False, is_json_serializable=True)
