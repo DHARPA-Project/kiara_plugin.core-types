@@ -52,7 +52,6 @@ src/kiara_plugin/core_types/version.txt
 public
 site
 .dephell_report
-.direnv
 .mypy_cache
 .env
 docs/api-documentation.md
@@ -67,5 +66,6 @@ ci/conda/kiara_plugin.core_types/meta.yaml
 ci/conda/kiara_plugin.core_types/build_*
 =======
 .pixi
+pixi.lock
 dev.py
 >>>>>>> theirs
