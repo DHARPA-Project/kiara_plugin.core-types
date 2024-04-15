@@ -17,9 +17,9 @@ from pathlib import Path
 
 import pytest
 
+from kiara.api import JobDesc, KiaraAPI
 from kiara.context import KiaraConfig
-from kiara.interfaces.python_api.base_api import BaseAPI
-from kiara.interfaces.python_api.models.job import JobDesc, JobTest
+from kiara.interfaces.python_api.models.job import JobTest
 from kiara.utils.testing import get_init_job, get_tests_for_job, list_job_descs
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -44,19 +44,19 @@ def get_job_alias(job_desc: JobDesc) -> str:
 
 
 @pytest.fixture
-def kiara_api() -> BaseAPI:
+def kiara_api() -> KiaraAPI:
 
     instance_path = create_temp_dir()
     kc = KiaraConfig.create_in_folder(instance_path)
-    api = BaseAPI(kc)
+    api = KiaraAPI(kc)
     return api
 
 
 @pytest.fixture
-def kiara_api_init_example() -> BaseAPI:
+def kiara_api_init_example() -> KiaraAPI:
     instance_path = create_temp_dir()
     kc = KiaraConfig.create_in_folder(instance_path)
-    api = BaseAPI(kc)
+    api = KiaraAPI(kc)
 
     init_jobs = []
     for jobs_folder in JOBS_FOLDERS:
