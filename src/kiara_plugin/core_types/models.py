@@ -33,11 +33,11 @@ class KiaraList(BaseModel, Sequence):
         description="The python class of which model instances are created. This is mostly meant as a hint for client applications."
     )
 
-    _size_cache: int = PrivateAttr(default=None)
-    _hash_cache: int = PrivateAttr(default=None)
-    _data_hash: int = PrivateAttr(default=None)
-    _schema_hash: int = PrivateAttr(default=None)
-    _value_hash: int = PrivateAttr(default=None)
+    _size_cache: int = PrivateAttr(default=None)  # type: ignore
+    _hash_cache: int = PrivateAttr(default=None)  # type: ignore
+    _data_hash: int = PrivateAttr(default=None)  # type: ignore
+    _schema_hash: int = PrivateAttr(default=None)  # type: ignore
+    _value_hash: int = PrivateAttr(default=None)  # type: ignore
 
     @property
     def size(self):

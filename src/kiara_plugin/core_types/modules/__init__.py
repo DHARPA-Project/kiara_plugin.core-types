@@ -52,7 +52,7 @@ class KiaraInputsConfig(KiaraModuleConfig):
 
             kiara_type: Union[None, str] = None
 
-            if field.annotation == bool:
+            if field.annotation == bool:  # noqa
                 kiara_type = "boolean"
             elif field.annotation == Union[None, int]:
                 kiara_type = "integer"
@@ -85,7 +85,7 @@ class KiaraInputsConfig(KiaraModuleConfig):
             if field.default:
                 result[field_name]["default"] = field.default
             elif field.default_factory:
-                result[field_name]["default"] = field.default_factory()
+                result[field_name]["default"] = field.default_factory()  # type: ignore
 
         return result
 
